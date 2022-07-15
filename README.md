@@ -1,2 +1,3 @@
-# Website
-Main website for the Helix Track.
+# Helix Track .io
+
+The main website for the Helix Track.
