@@ -1,3 +1,3 @@
-# Helix Track .io
+![JIRA alternative for the free world!](docs/assets/Wide_Black.png)
 
-Main website for the Helix Track.
+The main website for the Helix Track.
