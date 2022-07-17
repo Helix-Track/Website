@@ -1,4 +1,4 @@
-# Helix Track .io
+![JIRA alternative for the free world!](assets/Wide_Black.pdf)
 
 Website is in the phase of construction.
 
