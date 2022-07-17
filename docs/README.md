@@ -1,4 +1,4 @@
-![JIRA alternative for the free world!](assets/Wide_Black.pdf)
+![JIRA alternative for the free world!](assets/Wide_Black.png)
 
 Website is in the phase of construction.
 
