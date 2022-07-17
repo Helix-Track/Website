@@ -1,3 +1,3 @@
 # Helix Track .io
 
-JIRA alternative for the free world.
+Main website for the Helix Track.
