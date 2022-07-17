@@ -2,6 +2,6 @@
 
 Website is in the phase of construction.
 
-For more information you can reach us via email address: 
+For the more information you can reach us via the following email address: 
 
 svyaz.s.ulitkami [at] helixtrack.io
