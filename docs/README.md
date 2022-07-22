@@ -4,7 +4,7 @@ Website is in the phase of construction.
 
 For the more information you can reach us via the following communication channels: 
 
-- [Email](svyaz.s.ulitkami@helixtrack.io)
+- [Email](mailto:svyaz.s.ulitkami@helixtrack.io)
 - [Yandex Messenger](https://yandex.ru/chat/#/join/8813765f-4288-49e9-8c65-1e088f988587)
 
 
