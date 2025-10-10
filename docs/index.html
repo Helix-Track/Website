@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HelixTrack Core - The Open-Source JIRA Alternative for the Free World. 235 API endpoints, full Agile/Scrum support, and enterprise-ready features.">
+    <meta name="keywords" content="JIRA alternative, open source, project management, issue tracking, agile, scrum, free software">
+    <meta name="author" content="HelixTrack Project">
+    <title>HelixTrack Core - Open-Source JIRA Alternative for the Free World</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="assets/Wide_Black.png" alt="HelixTrack Logo" class="logo-img">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#api" class="nav-link">API</a></li>
+                    <li><a href="#docs" class="nav-link">Documentation</a></li>
+                    <li><a href="#download" class="nav-link">Download</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="https://github.com/Helix-Track/Core" class="btn btn-primary" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.840 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-grid"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge">✨ Version 2.0 Now Available</span>
+                </div>
+                <h1 class="hero-title">
+                    The Open-Source<br>
+                    <span class="gradient-text">JIRA Alternative</span><br>
+                    for the Free World
+                </h1>
+                <p class="hero-subtitle">
+                    Enterprise-grade project management and issue tracking with 235 API endpoints,
+                    complete Agile/Scrum support, and zero licensing costs.
+                </p>
+                <div class="hero-cta">
+                    <a href="#download" class="btn btn-large btn-primary">Get Started Free</a>
+                    <a href="#features" class="btn btn-large btn-outline">Explore Features</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">235</div>
+                        <div class="stat-label">API Endpoints</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">JIRA Parity</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Open Source</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">$0</div>
+                        <div class="stat-label">Licensing Fees</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Enterprise-Ready Features</h2>
+                <p class="section-subtitle">Everything you need for world-class project management</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-animation="fade-up">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>API-First Architecture</h3>
+                    <p>235 RESTful API endpoints providing complete programmatic access to all features. Build your own UI or integrate with existing tools.</p>
+                </div>
+
+                <div class="feature-card" data-animation="fade-up" data-delay="100">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M9 3v18M15 3v18M3 9h18M3 15h18"/>
+                        </svg>
+                    </div>
+                    <h3>Agile & Scrum</h3>
+                    <p>Full support for Kanban boards, sprint planning, story points, velocity tracking, and burndown charts.</p>
+                </div>
+
+                <div class="feature-card" data-animation="fade-up" data-delay="200">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>Custom Workflows</h3>
+                    <p>Design workflows that match your process. Define statuses, transitions, and ticket types for any methodology.</p>
+                </div>
+
+                <div class="feature-card" data-animation="fade-up" data-delay="300">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Multi-Tenancy</h3>
+                    <p>Enterprise-ready with account → organization → team hierarchy. Perfect for agencies and large organizations.</p>
+                </div>
+
+                <div class="feature-card" data-animation="fade-up" data-delay="400">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                    </div>
+                    <h3>Custom Fields</h3>
+                    <p>11 field types including text, number, date, select, multi-select, and more. Adapt to any workflow.</p>
+                </div>
+
+                <div class="feature-card" data-animation="fade-up" data-delay="500">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                    </div>
+                    <h3>Zero Cost</h3>
+                    <p>Completely free and open source. No per-user fees, no hidden costs, no vendor lock-in. Deploy anywhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Section -->
+    <section id="api" class="api-section">
+        <div class="container">
+            <div class="api-content">
+                <div class="api-text">
+                    <h2 class="section-title">Powerful REST API</h2>
+                    <p class="section-subtitle">235 endpoints organized into logical feature groups</p>
+                    <ul class="api-features-list">
+                        <li>✅ Phase 1: JIRA Parity (45 endpoints)</li>
+                        <li>✅ Workflow Engine (23 endpoints)</li>
+                        <li>✅ Agile/Scrum Support (23 endpoints)</li>
+                        <li>✅ Multi-Tenancy (28 endpoints)</li>
+                        <li>✅ Git Integration (17 endpoints)</li>
+                        <li>✅ System Infrastructure (37 endpoints)</li>
+                    </ul>
+                    <a href="../Application/docs/API_REFERENCE_COMPLETE.md" class="btn btn-primary">View API Documentation</a>
+                </div>
+                <div class="api-code">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-title">curl example</span>
+                        </div>
+                        <pre><code class="language-bash"># Create a priority
+curl -X POST http://localhost:8080/do \
+  -H "Content-Type: application/json" \
+  -d '{
+    "action": "priorityCreate",
+    "jwt": "your-jwt-token",
+    "data": {
+      "title": "Critical",
+      "level": 5,
+      "color": "#FF0000"
+    }
+  }'
+
+# Response
+{
+  "errorCode": -1,
+  "data": {
+    "priority": {
+      "id": "550e8400-e29b-41d4...",
+      "title": "Critical",
+      "level": 5,
+      "created": 1696118400
+    }
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🚀</div>
+                    <div class="stat-value">235</div>
+                    <div class="stat-label">API Endpoints</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-value">53</div>
+                    <div class="stat-label">Database Tables</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Test Coverage</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔒</div>
+                    <div class="stat-value">JWT</div>
+                    <div class="stat-label">Authentication</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="docs" class="docs-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Comprehensive Documentation</h2>
+                <p class="section-subtitle">Everything you need to get started and succeed</p>
+            </div>
+            <div class="docs-grid">
+                <a href="../Documentation/book/README.md" class="doc-card">
+                    <div class="doc-icon">📚</div>
+                    <h3>User Guide Book</h3>
+                    <p>Complete guide with 28 chapters covering all features, tutorials, and best practices.</p>
+                    <span class="doc-link">Read the guide →</span>
+                </a>
+                <a href="../Application/docs/USER_MANUAL.md" class="doc-card">
+                    <div class="doc-icon">📖</div>
+                    <h3>User Manual</h3>
+                    <p>Quick reference manual with installation, configuration, and API basics.</p>
+                    <span class="doc-link">View manual →</span>
+                </a>
+                <a href="../Application/docs/API_REFERENCE_COMPLETE.md" class="doc-card">
+                    <div class="doc-icon">🔌</div>
+                    <h3>API Reference</h3>
+                    <p>Complete API documentation with request/response examples for all 235 endpoints.</p>
+                    <span class="doc-link">Browse API docs →</span>
+                </a>
+                <a href="../IMPLEMENTATION_SUMMARY.md" class="doc-card">
+                    <div class="doc-icon">⚙️</div>
+                    <h3>Implementation Guide</h3>
+                    <p>Technical implementation details, architecture overview, and system internals.</p>
+                    <span class="doc-link">Read implementation →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download-section">
+        <div class="container">
+            <div class="download-content">
+                <h2 class="section-title">Get Started Today</h2>
+                <p class="section-subtitle">Choose your installation method</p>
+                <div class="download-methods">
+                    <div class="download-method">
+                        <h3>📦 Pre-built Binary</h3>
+                        <p>Download and run immediately</p>
+                        <div class="download-links">
+                            <a href="https://github.com/Helix-Track/Core/releases" class="btn btn-primary">Linux AMD64</a>
+                            <a href="https://github.com/Helix-Track/Core/releases" class="btn btn-primary">macOS ARM64</a>
+                            <a href="https://github.com/Helix-Track/Core/releases" class="btn btn-primary">Windows AMD64</a>
+                        </div>
+                    </div>
+                    <div class="download-method">
+                        <h3>🐳 Docker Container</h3>
+                        <p>One command deployment</p>
+                        <div class="code-snippet">
+                            <code>docker run -d -p 8080:8080 helixtrack/core:latest</code>
+                        </div>
+                    </div>
+                    <div class="download-method">
+                        <h3>🛠️ Build from Source</h3>
+                        <p>Full control over the build</p>
+                        <div class="code-snippet">
+                            <code>git clone https://github.com/Helix-Track/Core.git<br>cd Core/Application && go build</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Join the community and contribute</p>
+            </div>
+            <div class="contact-grid">
+                <a href="https://github.com/Helix-Track/Core" class="contact-card" target="_blank">
+                    <div class="contact-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>View source code and contribute</p>
+                </a>
+                <a href="mailto:svyaz.s.ulitkami@helixtrack.ru" class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>svyaz.s.ulitkami@helixtrack.ru</p>
+                </a>
+                <a href="https://t.me/helixtrack" class="contact-card" target="_blank">
+                    <div class="contact-icon">📱</div>
+                    <h3>Telegram</h3>
+                    <p>Join our Telegram channel</p>
+                </a>
+                <a href="https://yandex.ru/chat/#/join/8813765f-4288-49e9-8c65-1e088f988587" class="contact-card" target="_blank">
+                    <div class="contact-icon">💬</div>
+                    <h3>Yandex Messenger</h3>
+                    <p>Chat with the community</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/Wide_Black.png" alt="HelixTrack Logo" class="footer-logo">
+                    <p>The Open-Source JIRA Alternative for the Free World</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#api">API</a></li>
+                        <li><a href="#docs">Documentation</a></li>
+                        <li><a href="#download">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="../Documentation/book/README.md">User Guide</a></li>
+                        <li><a href="../Application/docs/USER_MANUAL.md">Manual</a></li>
+                        <li><a href="https://github.com/Helix-Track/Core">GitHub</a></li>
+                        <li><a href="https://github.com/Helix-Track/Core/issues">Issues</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://t.me/helixtrack">Telegram</a></li>
+                        <li><a href="https://yandex.ru/chat/#/join/8813765f-4288-49e9-8c65-1e088f988587">Yandex Chat</a></li>
+                        <li><a href="mailto:svyaz.s.ulitkami@helixtrack.ru">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HelixTrack Project. Licensed under the MIT License.</p>
+                <p>Version 2.0.0 | 235 API Endpoints | 100% Open Source</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
