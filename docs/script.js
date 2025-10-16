@@ -269,6 +269,9 @@ document.addEventListener('keydown', (e) => {
 // ============================================================================
 
 window.addEventListener('load', () => {
+    // Initialize theme
+    initTheme();
+
     document.body.classList.add('loaded');
 
     // Trigger initial animations
@@ -294,10 +297,68 @@ window.addEventListener('resize', () => {
 });
 
 // ============================================================================
+// THEME TOGGLE FUNCTIONALITY
+// ============================================================================
+
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.querySelector('.theme-icon');
+
+// Function to get system theme preference
+function getSystemTheme() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+// Function to set theme
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+
+    // Update icon
+    if (theme === 'dark') {
+        themeIcon.innerHTML = `
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        `;
+    } else {
+        themeIcon.innerHTML = `
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        `;
+    }
+}
+
+// Function to toggle theme
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+}
+
+// Initialize theme
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const systemTheme = getSystemTheme();
+    const theme = savedTheme || systemTheme;
+
+    setTheme(theme);
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            setTheme(e.matches ? 'dark' : 'light');
+        }
+    });
+}
+
+// Theme toggle event listener
+if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+}
+
+// ============================================================================
 // CONSOLE MESSAGE
 // ============================================================================
 
 console.log('%c🚀 HelixTrack Core', 'font-size: 20px; font-weight: bold; color: #0066CC;');
 console.log('%cThe Open-Source JIRA Alternative for the Free World', 'font-size: 14px; color: #666;');
 console.log('%cGitHub: https://github.com/Helix-Track/Core', 'font-size: 12px; color: #00CC66;');
-console.log('%c235 API Endpoints | 85% JIRA Parity | 100% Free', 'font-size: 12px; color: #FF6600;');
+console.log('%c297 API Actions | 100% JIRA Parity | 100% Free', 'font-size: 12px; color: #FF6600;');
