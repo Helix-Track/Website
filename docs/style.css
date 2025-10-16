@@ -1,17 +1,17 @@
 /* HelixTrack Core - Professional Website Styling */
 
 :root {
-    --primary-color: #0066CC;
-    --secondary-color: #00CC66;
-    --accent-color: #FF6600;
+    --primary-color: #BCE63B;
+    --secondary-color: #7AA590;
+    --accent-color: #B2E3C2;
     --dark: #1a1a1a;
     --darker: #0d0d0d;
     --light: #f8f9fa;
     --gray: #6c757d;
     --white: #ffffff;
-    --gradient-primary: linear-gradient(135deg, #0066CC 0%, #0099FF 100%);
-    --gradient-secondary: linear-gradient(135deg, #00CC66 0%, #00FF88 100%);
-    --gradient-accent: linear-gradient(135deg, #FF6600 0%, #FF9933 100%);
+    --gradient-primary: linear-gradient(135deg, #BCE63B 0%, #7AA590 100%);
+    --gradient-secondary: linear-gradient(135deg, #7AA590 0%, #B2E3C2 100%);
+    --gradient-accent: linear-gradient(135deg, #B2E3C2 0%, #BCE63B 100%);
     --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -61,6 +61,11 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 600;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -90,6 +95,12 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
+}
+
+.nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .logo-img {
@@ -845,6 +856,16 @@ body {
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
+    .nav-wrapper {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-cta {
+        gap: 10px;
+        flex-shrink: 0;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
