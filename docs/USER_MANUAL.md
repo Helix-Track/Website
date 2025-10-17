@@ -6,11 +6,12 @@
 2. [Installation](#installation)
 3. [Configuration](#configuration)
 4. [Running the Application](#running-the-application)
-5. [API Reference](#api-reference)
-6. [Error Handling](#error-handling)
-7. [Testing](#testing)
-8. [Troubleshooting](#troubleshooting)
-9. [Architecture](#architecture)
+5. [Service Discovery](#service-discovery)
+6. [API Reference](#api-reference)
+7. [Error Handling](#error-handling)
+8. [Testing](#testing)
+9. [Troubleshooting](#troubleshooting)
+10. [Architecture](#architecture)
 
 ## Introduction
 
@@ -30,6 +31,8 @@ HelixTrack Core is a production-ready, modern REST API service built with Go and
 - ✅ **Fully Decoupled**: All components can run on separate machines or clusters
 - ✅ **Comprehensive Testing**: 1,375 tests (98.8% pass rate, 71.9% average coverage)
 - ✅ **Production Ready**: Proper logging, graceful shutdown, health checks, extreme performance (50,000+ req/s)
+- ✅ **Port Fallback**: Automatically tries next available port if desired port is occupied
+- ✅ **Service Discovery**: UDP-based service discovery with availability broadcasting
 
 ### System Requirements
 
@@ -176,6 +179,8 @@ Create different configuration files for different environments:
 ./htCore -version
 ```
 
+**Note**: If the configured port (default: 8080) is already in use, the application will automatically try the next available port (8081, 8082, etc.) until it finds a free port.
+
 ### Running in Development Mode
 
 ```bash
@@ -203,6 +208,46 @@ docker run -d \
   -v /path/to/database:/app/Database \
   helixtrack-core:latest
 ```
+
+**Note**: If port 8080 is already in use inside the container, the application will automatically try the next available port. You may need to check the container logs to see which port the application actually started on.
+
+## Service Discovery
+
+### Port Fallback Mechanism
+
+HelixTrack Core includes an intelligent port fallback mechanism that ensures the service can start even when the desired port is occupied:
+
+- **Automatic Port Detection**: If the configured port (default: 8080) is unavailable, the application automatically tries the next available port
+- **Sequential Search**: The system tries ports sequentially (8080, 8081, 8082, etc.) until it finds an available port
+- **Maximum Attempts**: The system will try up to 100 different ports before giving up
+- **Port Wrapping**: If it reaches port 65535, it wraps around to higher-numbered ports starting from 1024
+
+### Availability Broadcasting
+
+Once the server starts successfully, it automatically broadcasts its availability to the network:
+
+- **UDP Broadcasting**: Uses UDP multicast on port 9999 to announce service availability
+- **Service Information**: Broadcasts service name, host, port, version, and API version
+- **Broadcast Interval**: Sends availability updates every 5 seconds
+- **Service Discovery**: Other HelixTrack components can discover available services using UDP queries
+
+### Configuration
+
+The port fallback and service discovery features are enabled by default and don't require additional configuration. The behavior can be controlled through the listener configuration:
+
+```json
+{
+  "listeners": [
+    {
+      "address": "0.0.0.0",
+      "port": 8080,
+      "https": false
+    }
+  ]
+}
+```
+
+If the specified port is unavailable, the next available port will be used automatically.
 
 ## Error Handling
 
