@@ -2,33 +2,36 @@
 
 ## Introduction
 
-This document provides comprehensive documentation for all 234+ API endpoints in HelixTrack Core V2.0. All endpoints use the unified `/do` endpoint with action-based routing.
+This document provides comprehensive documentation for all 297 API endpoints in HelixTrack Core V4.0. All endpoints use the unified `/do` endpoint with action-based routing.
 
-**Total API Actions**: 235
-**Version**: 2.0
-**Last Updated**: 2025-10-11
+**Total API Actions**: 297
+**Version**: 4.0
+**Last Updated**: 2025-10-17
 
 ---
 
 ## Table of Contents
 
-1. [Public Endpoints](#public-endpoints) (5 actions)
-2. [Authentication](#authentication) (1 action)
-3. [Generic CRUD Operations](#generic-crud-operations) (5 actions)
-4. [Phase 1 - JIRA Parity Features](#phase-1---jira-parity-features) (45 actions)
-   - [Priority Management](#priority-management) (5 actions)
-   - [Resolution Management](#resolution-management) (5 actions)
-   - [Version Management](#version-management) (13 actions)
-   - [Watcher Management](#watcher-management) (3 actions)
-   - [Filter Management](#filter-management) (6 actions)
-   - [Custom Field Management](#custom-field-management) (13 actions)
-5. [Workflow Engine](#workflow-engine) (23 actions)
-6. [Agile/Scrum Support](#agilescrum-support) (23 actions)
-7. [Multi-Tenancy & Organizational Hierarchy](#multi-tenancy--organizational-hierarchy) (28 actions)
-8. [Supporting Systems](#supporting-systems) (42 actions)
-9. [Git Integration](#git-integration) (17 actions)
-10. [Ticket Relationships](#ticket-relationships) (8 actions)
-11. [System Infrastructure](#system-infrastructure) (37 actions)
+ 1. [Public Endpoints](#public-endpoints) (5 actions)
+ 2. [Authentication](#authentication) (1 action)
+ 3. [Generic CRUD Operations](#generic-crud-operations) (5 actions)
+ 4. [Phase 1 - JIRA Parity Features](#phase-1---jira-parity-features) (45 actions)
+    - [Priority Management](#priority-management) (5 actions)
+    - [Resolution Management](#resolution-management) (5 actions)
+    - [Version Management](#version-management) (13 actions)
+    - [Watcher Management](#watcher-management) (3 actions)
+    - [Filter Management](#filter-management) (6 actions)
+    - [Custom Field Management](#custom-field-management) (13 actions)
+ 5. [Workflow Engine](#workflow-engine) (23 actions)
+ 6. [Agile/Scrum Support](#agilescrum-support) (23 actions)
+ 7. [Multi-Tenancy & Organizational Hierarchy](#multi-tenancy--organizational-hierarchy) (28 actions)
+ 8. [Supporting Systems](#supporting-systems) (42 actions)
+ 9. [Git Integration](#git-integration) (17 actions)
+ 10. [Ticket Relationships](#ticket-relationships) (8 actions)
+ 11. [System Infrastructure](#system-infrastructure) (37 actions)
+ 12. [Phase 2 Features](#phase-2-features) (62 actions)
+ 13. [Phase 3 Features](#phase-3-features) (31 actions)
+ 14. [Phase 4 Features](#phase-4-features) (15 actions)
 
 ---
 
@@ -1234,7 +1237,7 @@ Each endpoint includes:
 - Response format with example
 - Special notes or constraints
 
-For the complete documentation of all 235 endpoints, refer to the [IMPLEMENTATION_SUMMARY.md](/home/milosvasic/Projects/HelixTrack/Core/IMPLEMENTATION_SUMMARY.md) which provides the full catalog of all API actions.
+For the complete documentation of all 297 endpoints, refer to the [IMPLEMENTATION_SUMMARY.md](/home/milosvasic/Projects/HelixTrack/Core/IMPLEMENTATION_SUMMARY.md) which provides the full catalog of all API actions.
 
 ---
 
@@ -1274,7 +1277,7 @@ For the complete documentation of all 235 endpoints, refer to the [IMPLEMENTATIO
 
 ---
 
-**Document Version**: 2.0
-**API Version**: 2.0.0
-**Last Updated**: 2025-10-11
-**Total Endpoints**: 235
+**Document Version**: 4.0
+**API Version**: 4.0.0
+**Last Updated**: 2025-10-17
+**Total Endpoints**: 297
