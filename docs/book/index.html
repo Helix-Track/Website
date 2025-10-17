@@ -1,299 +1,352 @@
-# HelixTrack Core - Complete User Guide
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HelixTrack Core - Complete User Guide Book for the Open-Source JIRA Alternative">
+    <meta name="keywords" content="HelixTrack, JIRA alternative, user guide, documentation, book">
+    <meta name="author" content="HelixTrack Project">
+    <title>HelixTrack Core - Complete User Guide Book</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="../assets/Logo.png" alt="HelixTrack Logo" class="logo-img">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#features" class="nav-link">Features</a></li>
+                    <li><a href="../index.html#api" class="nav-link">API</a></li>
+                    <li><a href="../index.html#docs" class="nav-link">Documentation</a></li>
+                    <li><a href="../index.html#download" class="nav-link">Download</a></li>
+                    <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                        <svg class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                    </button>
+                    <a href="https://github.com/Helix-Track/Core" class="btn btn-primary" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-**Version 2.0**
-**The Open-Source JIRA Alternative for the Free World**
-
----
-
-## Welcome
-
-Welcome to the complete user guide for HelixTrack Core - a modern, powerful, and fully open-source project management and issue tracking system. This guide will help you master all aspects of HelixTrack Core, from basic setup to advanced enterprise deployments.
-
-## What is HelixTrack Core?
-
-HelixTrack Core is a production-ready REST API service that provides **85%+ JIRA feature parity** with a fully open architecture. Built with Go and designed for the free world, it offers:
-
-- ✅ **235 API Endpoints** - Complete feature coverage
-- ✅ **Multi-Database Support** - SQLite and PostgreSQL
-- ✅ **Multi-Tenancy** - Enterprise-ready organizational hierarchy
-- ✅ **Agile/Scrum** - Full sprint and board management
-- ✅ **Workflow Engine** - Customizable ticket workflows
-- ✅ **Git Integration** - Track commits and code changes
-- ✅ **Custom Fields** - 11 field types for flexibility
-- ✅ **Extensions** - Pluggable architecture for additional features
-
-## Who This Guide Is For
-
-This guide is designed for:
-
-- **Developers** - Learn the API and integrate HelixTrack into your applications
-- **System Administrators** - Deploy and configure HelixTrack in production
-- **Project Managers** - Understand features and capabilities
-- **Team Leads** - Set up workflows and manage teams
-- **Contributors** - Extend and customize HelixTrack
-
-## Guide Structure
-
-### Part I: Getting Started
-
-1. [Introduction](01-introduction.md)
-   - What is HelixTrack Core?
-   - Key features and capabilities
-   - Architecture overview
-   - Comparison with JIRA
-
-2. [Installation](02-installation.md)
-   - System requirements
-   - Installation methods
-   - Initial configuration
-   - Quick start guide
-
-3. [Configuration](03-configuration.md)
-   - Configuration file structure
-   - Database setup
-   - Service integration
-   - SSL/HTTPS configuration
-
-### Part II: Core Concepts
-
-4. [Authentication & Authorization](04-authentication.md)
-   - JWT authentication
-   - Permission system
-   - User management
-   - Security best practices
-
-5. [API Fundamentals](05-api-fundamentals.md)
-   - Request/response format
-   - Action-based routing
-   - Error handling
-   - Testing with curl and Postman
-
-6. [Data Model](06-data-model.md)
-   - Core entities (tickets, projects, users)
-   - Relationships and mappings
-   - Soft delete pattern
-   - Database schema V2.0
-
-### Part III: Feature Guides
-
-7. [Priority & Resolution Management](07-priority-resolution.md)
-   - Setting up priorities
-   - Defining resolutions
-   - Best practices
-
-8. [Version Management](08-version-management.md)
-   - Creating versions
-   - Affected vs. fix versions
-   - Release tracking
-   - Version lifecycle
-
-9. [Watcher & Notification System](09-watchers.md)
-   - Adding watchers
-   - Notification subscriptions
-   - Managing notifications
-
-10. [Custom Fields](10-custom-fields.md)
-    - Field types overview
-    - Creating custom fields
-    - Field options (select, multi-select)
-    - Using custom field values
-
-11. [Saved Filters](11-filters.md)
-    - Creating filters
-    - Sharing filters
-    - Advanced filter criteria
-
-12. [Workflow Engine](12-workflows.md)
-    - Understanding workflows
-    - Creating workflows
-    - Workflow steps and transitions
-    - Ticket statuses and types
-
-13. [Agile & Scrum](13-agile-scrum.md)
-    - Board management
-    - Sprint/Cycle planning
-    - Story points and estimation
-    - Velocity tracking
-
-14. [Multi-Tenancy](14-multi-tenancy.md)
-    - Account structure
-    - Organizations and teams
-    - User assignments
-    - Permission contexts
-
-15. [Components & Labels](15-components-labels.md)
-    - Project components
-    - Label management
-    - Label categories
-    - Component metadata
-
-16. [Asset Management](16-assets.md)
-    - Uploading files
-    - Attaching assets to tickets
-    - Asset metadata
-    - File types and limits
-
-17. [Git Integration](17-git-integration.md)
-    - Repository management
-    - Linking commits to tickets
-    - Repository types
-    - Commit tracking
-
-18. [Ticket Relationships](18-relationships.md)
-    - Relationship types
-    - Creating relationships
-    - Blocking dependencies
-    - Parent/child hierarchies
-
-19. [System Administration](19-system-admin.md)
-    - Permission management
-    - Audit logging
-    - Report builder
-    - Extension registry
-
-### Part IV: API Reference
-
-20. [Complete API Reference](20-api-reference.md)
-    - All 235 endpoints
-    - Request/response examples
-    - Authentication requirements
-    - Error codes
-
-### Part V: Practical Examples
-
-21. [Common Scenarios](21-scenarios.md)
-    - Setting up a new project
-    - Creating a sprint
-    - Managing a release
-    - Custom workflow examples
-
-22. [Integration Examples](22-integrations.md)
-    - Web application integration
-    - Mobile app integration
-    - CI/CD integration
-    - Webhook examples
-
-23. [Advanced Use Cases](23-advanced-use-cases.md)
-    - Multi-project management
-    - Enterprise hierarchies
-    - Complex workflows
-    - Custom reporting
-
-### Part VI: Exercises & Tutorials
-
-24. [Hands-On Exercises](24-exercises.md)
-    - Exercise 1: Basic ticket management
-    - Exercise 2: Sprint planning
-    - Exercise 3: Custom workflows
-    - Exercise 4: Reporting and analytics
-
-### Part VII: Troubleshooting & Maintenance
-
-25. [Troubleshooting Guide](25-troubleshooting.md)
-    - Common issues and solutions
-    - Log analysis
-    - Performance tuning
-    - Database maintenance
-
-26. [Best Practices](26-best-practices.md)
-    - Configuration best practices
-    - Security hardening
-    - Performance optimization
-    - Backup and recovery
-
-### Part VIII: Development & Extension
-
-27. [Extending HelixTrack](27-extending.md)
-    - Extension architecture
-    - Creating custom extensions
-    - API client development
-    - Contributing to core
-
-28. [Database Schema](28-database-schema.md)
-    - Complete schema documentation
-    - Table relationships
-    - Indexes and constraints
-    - Migration guide
-
----
-
-## How to Use This Guide
-
-### For New Users
-
-Start with **Part I: Getting Started** to install and configure HelixTrack Core. Then move to **Part II: Core Concepts** to understand the fundamentals.
-
-### For Developers
-
-Jump to **Part II: Core Concepts** for API fundamentals, then explore **Part IV: API Reference** for complete endpoint documentation.
-
-### For Administrators
-
-Focus on **Part I: Getting Started** for installation, **Part VII: Troubleshooting & Maintenance** for operations, and **Part IV: System Administration** for management.
-
-### For Power Users
-
-Explore **Part III: Feature Guides** for comprehensive feature documentation, and **Part V: Practical Examples** for real-world scenarios.
-
----
-
-## Conventions Used in This Guide
-
-### Code Examples
-
-```bash
-# Shell commands are shown with # comments
-curl -X POST http://localhost:8080/do
-```
-
-```json
-{
+    <!-- Main Content -->
+    <main class="container" style="padding-top: 80px; max-width: 1200px;">
+        <div class="section-header">
+            <h1 class="section-title">HelixTrack Core - Complete User Guide Book</h1>
+            <p class="section-subtitle">Comprehensive guide with 28 chapters covering all features, tutorials, and best practices</p>
+        </div>
+        
+        <div class="book-content" style="background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); line-height: 1.6; font-family: 'Inter', sans-serif;">
+            <h1>HelixTrack Core - Complete User Guide</h1>
+            
+            <p><strong>Version 2.0</strong></p>
+            <p><strong>The Open-Source JIRA Alternative for the Free World</strong></p>
+            
+            <hr>
+            
+            <h2>Welcome</h2>
+            <p>Welcome to the complete user guide for HelixTrack Core - a modern, powerful, and fully open-source project management and issue tracking system. This guide will help you master all aspects of HelixTrack Core, from basic setup to advanced enterprise deployments.</p>
+            
+            <h2>What is HelixTrack Core?</h2>
+            <p>HelixTrack Core is a production-ready REST API service that provides <strong>85%+ JIRA feature parity</strong> with a fully open architecture. Built with Go and designed for the free world, it offers:</p>
+            
+            <ul>
+                <li>✅ <strong>235 API Endpoints</strong> - Complete feature coverage</li>
+                <li>✅ <strong>Multi-Database Support</strong> - SQLite and PostgreSQL</li>
+                <li>✅ <strong>Multi-Tenancy</strong> - Enterprise-ready organizational hierarchy</li>
+                <li>✅ <strong>Agile/Scrum</strong> - Full sprint and board management</li>
+                <li>✅ <strong>Workflow Engine</strong> - Customizable ticket workflows</li>
+                <li>✅ <strong>Git Integration</strong> - Track commits and code changes</li>
+                <li>✅ <strong>Custom Fields</strong> - 11 field types for flexibility</li>
+                <li>✅ <strong>Extensions</strong> - Pluggable architecture for additional features</li>
+            </ul>
+            
+            <h2>Who This Guide Is For</h2>
+            <p>This guide is designed for:</p>
+            
+            <ul>
+                <li><strong>Developers</strong> - Learn the API and integrate HelixTrack into your applications</li>
+                <li><strong>System Administrators</strong> - Deploy and configure HelixTrack in production</li>
+                <li><strong>Project Managers</strong> - Understand features and capabilities</li>
+                <li><strong>Team Leads</strong> - Set up workflows and manage teams</li>
+                <li><strong>Contributors</strong> - Extend and customize HelixTrack</li>
+            </ul>
+            
+            <h2>Guide Structure</h2>
+            
+            <h3>Part I: Getting Started</h3>
+            <ol>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#configuration">Configuration</a></li>
+            </ol>
+            
+            <h3>Part II: Core Concepts</h3>
+            <ol>
+                <li><a href="#authentication">Authentication & Authorization</a></li>
+                <li><a href="#api-fundamentals">API Fundamentals</a></li>
+                <li><a href="#data-model">Data Model</a></li>
+            </ol>
+            
+            <h3>Part III: Feature Guides</h3>
+            <ol>
+                <li><a href="#priority-resolution">Priority & Resolution Management</a></li>
+                <li><a href="#version-management">Version Management</a></li>
+                <li><a href="#watchers">Watcher & Notification System</a></li>
+                <li><a href="#custom-fields">Custom Fields</a></li>
+                <li><a href="#filters">Saved Filters</a></li>
+                <li><a href="#workflows">Workflow Engine</a></li>
+                <li><a href="#agile-scrum">Agile & Scrum</a></li>
+                <li><a href="#multi-tenancy">Multi-Tenancy</a></li>
+                <li><a href="#components-labels">Components & Labels</a></li>
+                <li><a href="#assets">Asset Management</a></li>
+                <li><a href="#git-integration">Git Integration</a></li>
+                <li><a href="#relationships">Ticket Relationships</a></li>
+                <li><a href="#system-admin">System Administration</a></li>
+            </ol>
+            
+            <h3>Part IV: API Reference</h3>
+            <ol>
+                <li><a href="#api-reference">Complete API Reference</a></li>
+            </ol>
+            
+            <h3>Part V: Practical Examples</h3>
+            <ol>
+                <li><a href="#scenarios">Common Scenarios</a></li>
+                <li><a href="#integrations">Integration Examples</a></li>
+                <li><a href="#advanced-use-cases">Advanced Use Cases</a></li>
+            </ol>
+            
+            <h3>Part VI: Exercises & Tutorials</h3>
+            <ol>
+                <li><a href="#exercises">Hands-On Exercises</a></li>
+            </ol>
+            
+            <h3>Part VII: Troubleshooting & Maintenance</h3>
+            <ol>
+                <li><a href="#troubleshooting">Troubleshooting Guide</a></li>
+                <li><a href="#best-practices">Best Practices</a></li>
+            </ol>
+            
+            <h3>Part VIII: Development & Extension</h3>
+            <ol>
+                <li><a href="#extending">Extending HelixTrack</a></li>
+                <li><a href="#database-schema">Database Schema</a></li>
+            </ol>
+            
+            <h2 id="introduction">Introduction</h2>
+            <p>What is HelixTrack Core? Key features and capabilities, Architecture overview, Comparison with JIRA.</p>
+            
+            <h2 id="installation">Installation</h2>
+            <p>System requirements, Installation methods, Initial configuration, Quick start guide.</p>
+            
+            <h2 id="configuration">Configuration</h2>
+            <p>Configuration file structure, Database setup, Service integration, SSL/HTTPS configuration.</p>
+            
+            <h2 id="authentication">Authentication & Authorization</h2>
+            <p>JWT authentication, Permission system, User management, Security best practices.</p>
+            
+            <h2 id="api-fundamentals">API Fundamentals</h2>
+            <p>Request/response format, Action-based routing, Error handling, Testing with curl and Postman.</p>
+            
+            <h2 id="data-model">Data Model</h2>
+            <p>Core entities (tickets, projects, users), Relationships and mappings, Soft delete pattern, Database schema V2.0.</p>
+            
+            <h2 id="priority-resolution">Priority & Resolution Management</h2>
+            <p>Setting up priorities, Defining resolutions, Best practices.</p>
+            
+            <h2 id="version-management">Version Management</h2>
+            <p>Creating versions, Affected vs. fix versions, Release tracking, Version lifecycle.</p>
+            
+            <h2 id="watchers">Watcher & Notification System</h2>
+            <p>Adding watchers, Notification subscriptions, Managing notifications.</p>
+            
+            <h2 id="custom-fields">Custom Fields</h2>
+            <p>Field types overview, Creating custom fields, Field options (select, multi-select), Using custom field values.</p>
+            
+            <h2 id="filters">Saved Filters</h2>
+            <p>Creating filters, Sharing filters, Advanced filter criteria.</p>
+            
+            <h2 id="workflows">Workflow Engine</h2>
+            <p>Understanding workflows, Creating workflows, Workflow steps and transitions, Ticket statuses and types.</p>
+            
+            <h2 id="agile-scrum">Agile & Scrum</h2>
+            <p>Board management, Sprint/Cycle planning, Story points and estimation, Velocity tracking.</p>
+            
+            <h2 id="multi-tenancy">Multi-Tenancy</h2>
+            <p>Account structure, Organizations and teams, User assignments, Permission contexts.</p>
+            
+            <h2 id="components-labels">Components & Labels</h2>
+            <p>Project components, Label management, Label categories, Component metadata.</p>
+            
+            <h2 id="assets">Asset Management</h2>
+            <p>Uploading files, Attaching assets to tickets, Asset metadata, File types and limits.</p>
+            
+            <h2 id="git-integration">Git Integration</h2>
+            <p>Repository management, Linking commits to tickets, Repository types, Commit tracking.</p>
+            
+            <h2 id="relationships">Ticket Relationships</h2>
+            <p>Relationship types, Creating relationships, Blocking dependencies, Parent/child hierarchies.</p>
+            
+            <h2 id="system-admin">System Administration</h2>
+            <p>Permission management, Audit logging, Report builder, Extension registry.</p>
+            
+            <h2 id="api-reference">Complete API Reference</h2>
+            <p>All 235 endpoints, Request/response examples, Authentication requirements, Error codes.</p>
+            
+            <h2 id="scenarios">Common Scenarios</h2>
+            <p>Setting up a new project, Creating a sprint, Managing a release, Custom workflow examples.</p>
+            
+            <h2 id="integrations">Integration Examples</h2>
+            <p>Web application integration, Mobile app integration, CI/CD integration, Webhook examples.</p>
+            
+            <h2 id="advanced-use-cases">Advanced Use Cases</h2>
+            <p>Multi-project management, Enterprise hierarchies, Complex workflows, Custom reporting.</p>
+            
+            <h2 id="exercises">Hands-On Exercises</h2>
+            <p>Exercise 1: Basic ticket management, Exercise 2: Sprint planning, Exercise 3: Custom workflows, Exercise 4: Reporting and analytics.</p>
+            
+            <h2 id="troubleshooting">Troubleshooting Guide</h2>
+            <p>Common issues and solutions, Log analysis, Performance tuning, Database maintenance.</p>
+            
+            <h2 id="best-practices">Best Practices</h2>
+            <p>Configuration best practices, Security hardening, Performance optimization, Backup and recovery.</p>
+            
+            <h2 id="extending">Extending HelixTrack</h2>
+            <p>Extension architecture, Creating custom extensions, API client development, Contributing to core.</p>
+            
+            <h2 id="database-schema">Database Schema</h2>
+            <p>Complete schema documentation, Table relationships, Indexes and constraints, Migration guide.</p>
+            
+            <hr>
+            
+            <h2>How to Use This Guide</h2>
+            
+            <h3>For New Users</h3>
+            <p>Start with <strong>Part I: Getting Started</strong> to install and configure HelixTrack Core. Then move to <strong>Part II: Core Concepts</strong> to understand the fundamentals.</p>
+            
+            <h3>For Developers</h3>
+            <p>Jump to <strong>Part II: Core Concepts</strong> for API fundamentals, then explore <strong>Part IV: API Reference</strong> for complete endpoint documentation.</p>
+            
+            <h3>For Administrators</h3>
+            <p>Focus on <strong>Part I: Getting Started</strong> for installation, <strong>Part VII: Troubleshooting & Maintenance</strong> for operations, and <strong>Part IV: System Administration</strong> for management.</p>
+            
+            <h3>For Power Users</h3>
+            <p>Explore <strong>Part III: Feature Guides</strong> for comprehensive feature documentation, and <strong>Part V: Practical Examples</strong> for real-world scenarios.</p>
+            
+            <h2>Conventions Used in This Guide</h2>
+            
+            <h3>Code Examples</h3>
+            <pre><code># Shell commands are shown with # comments
+curl -X POST http://localhost:8080/do</code></pre>
+            
+            <pre><code>{
   "comment": "JSON examples are formatted for readability"
-}
-```
+}</code></pre>
+            
+            <h3>Callout Boxes</h3>
+            <p><strong>Note</strong>: Important information that helps clarify concepts</p>
+            <p><strong>Warning</strong>: Critical information to prevent errors or data loss</p>
+            <p><strong>Tip</strong>: Helpful suggestions and best practices</p>
+            
+            <h3>Navigation</h3>
+            <ul>
+                <li>📖 <strong>Reading</strong>: Informational content</li>
+                <li>🔧 <strong>Exercise</strong>: Hands-on practice</li>
+                <li>💡 <strong>Example</strong>: Real-world scenarios</li>
+                <li>⚠️ <strong>Important</strong>: Critical information</li>
+            </ul>
+            
+            <h2>Getting Help</h2>
+            <ul>
+                <li><strong>Documentation</strong>: This guide and <a href="../USER_MANUAL.md">USER_MANUAL.md</a></li>
+                <li><strong>API Reference</strong>: <a href="../API_REFERENCE_COMPLETE.md">API_REFERENCE_COMPLETE.md</a></li>
+                <li><strong>Implementation Details</strong>: <a href="../IMPLEMENTATION_SUMMARY.md">IMPLEMENTATION_SUMMARY.md</a></li>
+                <li><strong>GitHub Issues</strong>: <a href="https://github.com/Helix-Track/Core/issues">Report bugs and request features</a></li>
+                <li><strong>Community</strong>: Join our community discussions</li>
+            </ul>
+            
+            <h2>About This Guide</h2>
+            <p><strong>Version</strong>: 2.0</p>
+            <p><strong>Last Updated</strong>: October 11, 2025</p>
+            <p><strong>API Version</strong>: 2.0.0</p>
+            <p><strong>Coverage</strong>: 235 API Endpoints</p>
+            
+            <p>This guide is maintained alongside the HelixTrack Core codebase and is updated with each release.</p>
+            
+            <h2>Ready to Begin?</h2>
+            <p>Start your journey with <a href="#introduction">Chapter 1: Introduction</a> →</p>
+            
+            <hr>
+            
+            <p><strong>HelixTrack Core</strong> - The Open-Source JIRA Alternative for the Free World 🚀</p>
+        </div>
+    </main>
 
-### Callout Boxes
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../assets/Logo.png" alt="HelixTrack Logo" class="footer-logo">
+                    <p>The Open-Source JIRA Alternative for the Free World</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="../index.html#features">Features</a></li>
+                        <li><a href="../index.html#api">API</a></li>
+                        <li><a href="../index.html#docs">Documentation</a></li>
+                        <li><a href="../index.html#download">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="index.html">User Guide</a></li>
+                        <li><a href="../manual.html">Manual</a></li>
+                        <li><a href="https://github.com/Helix-Track/Core">GitHub</a></li>
+                        <li><a href="https://github.com/Helix-Track/Core/issues">Issues</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://t.me/helixtrack">Telegram</a></li>
+                        <li><a href="https://yandex.ru/chat/#/join/8813765f-4288-49e9-8c65-1e088f988587">Yandex Chat</a></li>
+                        <li><a href="mailto:svyaz.s.ulitkami@helixtrack.ru">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HelixTrack Project. Licensed under the MIT License.</p>
+                <p>Version 4.0.0 | 297 API Actions | 100% JIRA Parity | 100% Open Source</p>
+            </div>
+        </div>
+    </footer>
 
-> **Note**: Important information that helps clarify concepts
-
-> **Warning**: Critical information to prevent errors or data loss
-
-> **Tip**: Helpful suggestions and best practices
-
-### Navigation
-
-- 📖 **Reading**: Informational content
-- 🔧 **Exercise**: Hands-on practice
-- 💡 **Example**: Real-world scenarios
-- ⚠️ **Important**: Critical information
-
----
-
-## Getting Help
-
-- **Documentation**: This guide and [USER_MANUAL.md](../../Application/docs/USER_MANUAL.md)
-- **API Reference**: [API_REFERENCE_COMPLETE.md](../../Application/docs/API_REFERENCE_COMPLETE.md)
-- **Implementation Details**: [IMPLEMENTATION_SUMMARY.md](../../IMPLEMENTATION_SUMMARY.md)
-- **GitHub Issues**: [Report bugs and request features](https://github.com/Helix-Track/Core/issues)
-- **Community**: Join our community discussions
-
----
-
-## About This Guide
-
-**Version**: 2.0
-**Last Updated**: October 11, 2025
-**API Version**: 2.0.0
-**Coverage**: 235 API Endpoints
-
-This guide is maintained alongside the HelixTrack Core codebase and is updated with each release.
-
----
-
-## Ready to Begin?
-
-Start your journey with [Chapter 1: Introduction](01-introduction.md) →
-
----
-
-**HelixTrack Core** - The Open-Source JIRA Alternative for the Free World 🚀
+    <script src="../script.js"></script>
+</body>
+</html>

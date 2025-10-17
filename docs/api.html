@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HelixTrack Core - Complete API Reference for the Open-Source JIRA Alternative">
+    <meta name="keywords" content="HelixTrack, JIRA alternative, API reference, REST API">
+    <meta name="author" content="HelixTrack Project">
+    <title>HelixTrack Core - Complete API Reference</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="assets/Logo.png" alt="HelixTrack Logo" class="logo-img">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#features" class="nav-link">Features</a></li>
+                    <li><a href="index.html#api" class="nav-link">API</a></li>
+                    <li><a href="index.html#docs" class="nav-link">Documentation</a></li>
+                    <li><a href="index.html#download" class="nav-link">Download</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                        <svg class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                    </button>
+                    <a href="https://github.com/Helix-Track/Core" class="btn btn-primary" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container" style="padding-top: 80px; max-width: 1200px;">
+        <div class="section-header">
+            <h1 class="section-title">HelixTrack Core - Complete API Reference</h1>
+            <p class="section-subtitle">Comprehensive documentation for all 235 API endpoints</p>
+        </div>
+        
+        <div class="api-content" style="background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); line-height: 1.6; font-family: 'Inter', sans-serif;">
+            <h1>HelixTrack Core - Complete API Reference</h1>
+            
+            <h2>Introduction</h2>
+            <p>This document provides comprehensive documentation for all 234+ API endpoints in HelixTrack Core V2.0. All endpoints use the unified `/do` endpoint with action-based routing.</p>
+            
+            <p><strong>Total API Actions</strong>: 235</p>
+            <p><strong>Version</strong>: 2.0</p>
+            <p><strong>Last Updated</strong>: 2025-10-11</p>
+            
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="#public-endpoints">Public Endpoints</a> (5 actions)</li>
+                <li><a href="#authentication">Authentication</a> (1 action)</li>
+                <li><a href="#generic-crud">Generic CRUD Operations</a> (5 actions)</li>
+                <li><a href="#phase-1">Phase 1 - JIRA Parity Features</a> (45 actions)</li>
+                <li><a href="#workflow-engine">Workflow Engine</a> (23 actions)</li>
+                <li><a href="#agile-scrum">Agile/Scrum Support</a> (23 actions)</li>
+                <li><a href="#multi-tenancy">Multi-Tenancy & Organizational Hierarchy</a> (28 actions)</li>
+                <li><a href="#supporting-systems">Supporting Systems</a> (42 actions)</li>
+                <li><a href="#git-integration">Git Integration</a> (17 actions)</li>
+                <li><a href="#ticket-relationships">Ticket Relationships</a> (8 actions)</li>
+                <li><a href="#system-infrastructure">System Infrastructure</a> (37 actions)</li>
+            </ol>
+            
+            <h2>Request/Response Format</h2>
+            
+            <h3>Standard Request Format</h3>
+            <p>All API requests use this structure:</p>
+            <pre><code>{
+  "action": "string",      // Required: action name
+  "jwt": "string",         // Required for authenticated actions
+  "locale": "string",      // Optional: locale code (e.g., "en-US")
+  "object": "string",      // Required for generic CRUD operations
+  "data": {}               // Action-specific data
+}</code></pre>
+            
+            <h3>Standard Response Format</h3>
+            <p>All API responses use this structure:</p>
+            <pre><code>{
+  "errorCode": -1,                    // -1 = success, other = error
+  "errorMessage": "string",           // Error message (empty on success)
+  "errorMessageLocalised": "string",  // Localized error message
+  "data": {}                          // Response data (varies by action)
+}</code></pre>
+            
+            <h2 id="public-endpoints">Public Endpoints</h2>
+            <p>These endpoints do not require authentication.</p>
+            
+            <h3>version</h3>
+            <p>Get API version information.</p>
+            <p><strong>Authentication</strong>: None required</p>
+            <p><strong>Permissions</strong>: None required</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "version"
+}</code></pre>
+            <p><strong>Response:</strong></p>
+            <pre><code>{
+  "errorCode": -1,
+  "data": {
+    "version": "2.0.0",
+    "api": "2.0.0",
+    "build": "2025-10-11"
+  }
+}</code></pre>
+            
+            <h3>jwtCapable</h3>
+            <p>Check if JWT authentication is enabled and available.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "jwtCapable"
+}</code></pre>
+            <p><strong>Response:</strong></p>
+            <pre><code>{
+  "errorCode": -1,
+  "data": {
+    "jwtCapable": true,
+    "authServiceEnabled": true
+  }
+}</code></pre>
+            
+            <h3>dbCapable</h3>
+            <p>Check if database connection is available and healthy.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "dbCapable"
+}</code></pre>
+            <p><strong>Response:</strong></p>
+            <pre><code>{
+  "errorCode": -1,
+  "data": {
+    "dbCapable": true,
+    "databaseType": "sqlite",
+    "healthy": true
+  }
+}</code></pre>
+            
+            <h3>health</h3>
+            <p>Get overall system health status.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "health"
+}</code></pre>
+            <p><strong>Response:</strong></p>
+            <pre><code>{
+  "errorCode": -1,
+  "data": {
+    "status": "healthy",
+    "checks": {
+      "database": "healthy",
+      "authService": "enabled",
+      "permissionService": "enabled"
+    },
+    "uptime": 3600
+  }
+}</code></pre>
+            
+            <h3>Health Check (GET)</h3>
+            <p>Dedicated GET endpoint for health monitoring.</p>
+            <p><strong>URL</strong>: <code>GET /health</code></p>
+            <p><strong>Response:</strong></p>
+            <pre><code>{
+  "status": "healthy"
+}</code></pre>
+            
+            <h2 id="authentication">Authentication</h2>
+            
+            <h3>authenticate</h3>
+            <p>Authenticate user credentials and receive session information.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "authenticate",
+  "data": {
+    "username": "testuser",
+    "password": "SecurePass123!"
+  }
+}</code></pre>
+            <p><strong>Response:</strong></p>
+            <pre><code>{
+  "errorCode": -1,
+  "data": {
+    "username": "testuser",
+    "name": "Test User",
+    "role": "admin",
+    "permissions": "READ|CREATE|UPDATE|DELETE"
+  }
+}</code></pre>
+            
+            <h2 id="generic-crud">Generic CRUD Operations</h2>
+            <p>These actions work with any entity type by specifying the <code>object</code> parameter.</p>
+            
+            <h3>create</h3>
+            <p>Create a new entity.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "create",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "object": "project",
+  "data": {
+    "name": "New Project",
+    "description": "Project description",
+    "key": "PROJ"
+  }
+}</code></pre>
+            
+            <h3>read</h3>
+            <p>Read a specific entity by ID.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "read",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "id": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}</code></pre>
+            
+            <h3>list</h3>
+            <p>List entities with optional filtering, pagination, and sorting.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "list",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "filter": {
+      "status": "active"
+    },
+    "limit": 50,
+    "offset": 0,
+    "orderBy": "created",
+    "order": "DESC"
+  }
+}</code></pre>
+            
+            <h3>modify</h3>
+            <p>Modify an existing entity.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "modify",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "object": "project",
+  "data": {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "name": "Updated Project Name",
+    "description": "Updated description"
+  }
+}</code></pre>
+            
+            <h3>remove</h3>
+            <p>Soft-delete an entity (sets deleted flag, does not physically delete).</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "remove",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "object": "project",
+  "data": {
+    "id": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}</code></pre>
+            
+            <h2 id="phase-1">Phase 1 - JIRA Parity Features</h2>
+            <p>These features provide 90%+ JIRA compatibility for core issue tracking functionality.</p>
+            
+            <h3>Priority Management</h3>
+            <p>Manage ticket priorities (e.g., Low, Medium, High, Critical).</p>
+            
+            <h4>priorityCreate</h4>
+            <p>Create a new priority level.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "priorityCreate",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "title": "Critical",
+    "level": 5,
+    "description": "Critical issues requiring immediate attention",
+    "icon": "exclamation-circle",
+    "color": "#FF0000"
+  }
+}</code></pre>
+            
+            <h4>priorityRead</h4>
+            <p>Read a specific priority by ID.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "priorityRead",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "id": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}</code></pre>
+            
+            <h4>priorityList</h4>
+            <p>List all priorities ordered by level.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "priorityList",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {}
+}</code></pre>
+            
+            <h4>priorityModify</h4>
+            <p>Update an existing priority.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "priorityModify",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "title": "Urgent",
+    "level": 5,
+    "color": "#FF3300"
+  }
+}</code></pre>
+            
+            <h4>priorityRemove</h4>
+            <p>Soft-delete a priority.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "priorityRemove",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "id": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}</code></pre>
+            
+            <h3>Resolution Management</h3>
+            <p>Manage ticket resolutions (e.g., Done, Won't Fix, Duplicate).</p>
+            
+            <h4>resolutionCreate</h4>
+            <p>Create a new resolution type.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "resolutionCreate",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "title": "Done",
+    "description": "Task completed successfully"
+  }
+}</code></pre>
+            
+            <h4>resolutionRead</h4>
+            <p>Read a specific resolution by ID.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "resolutionRead",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "id": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}</code></pre>
+            
+            <h4>resolutionList</h4>
+            <p>List all resolutions ordered by title.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "resolutionList",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {}
+}</code></pre>
+            
+            <h4>resolutionModify</h4>
+            <p>Update an existing resolution.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "resolutionModify",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "title": "Completed",
+    "description": "Work finished and verified"
+  }
+}</code></pre>
+            
+            <h4>resolutionRemove</h4>
+            <p>Soft-delete a resolution.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "resolutionRemove",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "id": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}</code></pre>
+            
+            <h3>Version Management</h3>
+            <p>Manage product versions with affected/fix version tracking.</p>
+            
+            <h4>versionCreate</h4>
+            <p>Create a new version.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "versionCreate",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "name": "v1.0.0",
+    "description": "First stable release",
+    "releaseDate": 1696118400,
+    "startDate": 1693526400,
+    "released": false,
+    "archived": false
+  }
+}</code></pre>
+            
+            <h4>versionRead</h4>
+            <p>Read a specific version by ID.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "versionRead",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "id": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}</code></pre>
+            
+            <h4>versionList</h4>
+            <p>List all versions.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "versionList",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {}
+}</code></pre>
+            
+            <h4>versionModify</h4>
+            <p>Update an existing version.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "versionModify",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "name": "v1.0.1",
+    "description": "Bug fix release"
+  }
+}</code></pre>
+            
+            <h4>versionRemove</h4>
+            <p>Soft-delete a version.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "versionRemove",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "id": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}</code></pre>
+            
+            <h4>versionRelease</h4>
+            <p>Mark a version as released.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "versionRelease",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "id": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}</code></pre>
+            
+            <h4>versionArchive</h4>
+            <p>Archive a version.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "versionArchive",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "id": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}</code></pre>
+            
+            <h4>versionAddAffected</h4>
+            <p>Add an affected version to a ticket.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "versionAddAffected",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "ticketId": "PROJ-123",
+    "versionId": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}</code></pre>
+            
+            <h4>versionRemoveAffected</h4>
+            <p>Remove an affected version from a ticket.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "versionRemoveAffected",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "ticketId": "PROJ-123",
+    "versionId": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}</code></pre>
+            
+            <h4>versionListAffected</h4>
+            <p>List all affected versions for a ticket.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "versionListAffected",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "ticketId": "PROJ-123"
+  }
+}</code></pre>
+            
+            <h4>versionAddFix</h4>
+            <p>Add a fix version to a ticket.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "versionAddFix",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "ticketId": "PROJ-123",
+    "versionId": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}</code></pre>
+            
+            <h4>versionRemoveFix</h4>
+            <p>Remove a fix version from a ticket.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "versionRemoveFix",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "ticketId": "PROJ-123",
+    "versionId": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}</code></pre>
+            
+            <h4>versionListFix</h4>
+            <p>List all fix versions for a ticket.</p>
+            <p><strong>Request:</strong></p>
+            <pre><code>{
+  "action": "versionListFix",
+  "jwt": "eyJhbGciOiJIUzI1NiIs...",
+  "data": {
+    "ticketId": "PROJ-123"
+  }
+}</code></pre>
+            
+            <h3>Watcher Management</h3>
+            <p>Manage ticket watchers (3 actions).</p>
+            
+            <h3>Filter Management</h3>
+            <p>Manage saved filters (6 actions).</p>
+            
+            <h3>Custom Field Management</h3>
+            <p>Manage custom fields (13 actions, 11 field types).</p>
+            
+            <h2 id="workflow-engine">Workflow Engine</h2>
+            <p>Workflow management (23 actions).</p>
+            
+            <h2 id="agile-scrum">Agile/Scrum Support</h2>
+            <p>Board and cycle management (23 actions).</p>
+            
+            <h2 id="multi-tenancy">Multi-Tenancy & Organizational Hierarchy</h2>
+            <p>Account, organization, team management (28 actions).</p>
+            
+            <h2 id="supporting-systems">Supporting Systems</h2>
+            <p>Component, label, asset management (42 actions).</p>
+            
+            <h2 id="git-integration">Git Integration</h2>
+            <p>Repository management (17 actions).</p>
+            
+            <h2 id="ticket-relationships">Ticket Relationships</h2>
+            <p>Relationship management (8 actions).</p>
+            
+            <h2 id="system-infrastructure">System Infrastructure</h2>
+            <p>Permission, audit, report, extension management (37 actions).</p>
+            
+            <h2>Error Codes Reference</h2>
+            
+            <h3>Success</h3>
+            <ul>
+                <li><strong>-1</strong>: No error (success)</li>
+            </ul>
+            
+            <h3>Request Errors (100X)</h3>
+            <ul>
+                <li><strong>1000</strong>: Invalid request format</li>
+                <li><strong>1001</strong>: Invalid action name</li>
+                <li><strong>1002</strong>: Missing JWT token</li>
+                <li><strong>1003</strong>: Invalid JWT token</li>
+                <li><strong>1004</strong>: Missing object parameter</li>
+                <li><strong>1005</strong>: Invalid object parameter</li>
+                <li><strong>1006</strong>: Missing required data</li>
+                <li><strong>1007</strong>: Invalid data format</li>
+                <li><strong>1008</strong>: Unauthorized (not authenticated)</li>
+                <li><strong>1009</strong>: Forbidden (insufficient permissions)</li>
+            </ul>
+            
+            <h3>System Errors (200X)</h3>
+            <ul>
+                <li><strong>2000</strong>: Internal server error</li>
+                <li><strong>2001</strong>: Database error</li>
+                <li><strong>2002</strong>: Service unavailable</li>
+                <li><strong>2003</strong>: Configuration error</li>
+                <li><strong>2004</strong>: Authentication service error</li>
+                <li><strong>2005</strong>: Permission service error</li>
+                <li><strong>2006</strong>: Extension service error</li>
+            </ul>
+            
+            <h3>Entity Errors (300X)</h3>
+            <ul>
+                <li><strong>3000</strong>: Entity not found</li>
+                <li><strong>3001</strong>: Entity already exists</li>
+                <li><strong>3002</strong>: Entity validation failed</li>
+                <li><strong>3003</strong>: Entity delete failed</li>
+                <li><strong>3004</strong>: Entity update failed</li>
+                <li><strong>3005</strong>: Entity create failed</li>
+            </ul>
+            
+            <hr>
+            
+            <p><strong>Document Version</strong>: 2.0</p>
+            <p><strong>API Version</strong>: 2.0.0</p>
+            <p><strong>Last Updated</strong>: 2025-10-11</p>
+            <p><strong>Total Endpoints</strong>: 235</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/Logo.png" alt="HelixTrack Logo" class="footer-logo">
+                    <p>The Open-Source JIRA Alternative for the Free World</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#api">API</a></li>
+                        <li><a href="index.html#docs">Documentation</a></li>
+                        <li><a href="index.html#download">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="book/index.html">User Guide</a></li>
+                        <li><a href="manual.html">Manual</a></li>
+                        <li><a href="https://github.com/Helix-Track/Core">GitHub</a></li>
+                        <li><a href="https://github.com/Helix-Track/Core/issues">Issues</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://t.me/helixtrack">Telegram</a></li>
+                        <li><a href="https://yandex.ru/chat/#/join/8813765f-4288-49e9-8c65-1e088f988587">Yandex Chat</a></li>
+                        <li><a href="mailto:svyaz.s.ulitkami@helixtrack.ru">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HelixTrack Project. Licensed under the MIT License.</p>
+                <p>Version 4.0.0 | 297 API Actions | 100% JIRA Parity | 100% Open Source</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
