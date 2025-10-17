@@ -536,12 +536,12 @@ h1, h2, h3, h4, h5, h6 {
     overflow-x: auto;
 }
 
-.code-window code {
-    font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #f8f8f2;
-}
+ .code-window code {
+     font-family: 'Courier New', monospace;
+     font-size: 0.9rem;
+     line-height: 1.6;
+     color: var(--white);
+ }
 
 /* Stats Section */
 .stats-section {

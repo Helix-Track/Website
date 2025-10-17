@@ -58,7 +58,7 @@
             <p class="section-subtitle">Detailed overview of all implemented features and systems</p>
         </div>
         
-        <div class="implementation-content" style="background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); line-height: 1.6; font-family: 'Inter', sans-serif;">
+         <div class="implementation-content" style="background: var(--card-bg); padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px var(--shadow-color); line-height: 1.6; font-family: 'Inter', sans-serif; color: var(--text-color); border: 1px solid var(--border-color);">
             <h1>HelixTrack Core - Complete Implementation Summary</h1>
             
             <h2>🎯 Executive Summary</h2>
@@ -100,37 +100,37 @@
             
             <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
                 <thead>
-                    <tr style="background: #f5f5f5;">
-                        <th style="border: 1px solid #ddd; padding: 8px;">Action</th>
-                        <th style="border: 1px solid #ddd; padding: 8px;">Endpoint</th>
-                        <th style="border: 1px solid #ddd; padding: 8px;">Description</th>
+                     <tr style="background: var(--section-bg);">
+                        <th style="border: 1px solid var(--border-color); padding: 8px;">Action</th>
+                        <th style="border: 1px solid var(--border-color); padding: 8px;">Endpoint</th>
+                        <th style="border: 1px solid var(--border-color); padding: 8px;">Description</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>priorityCreate</code></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">POST /do</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Create new priority (level 1-5)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>priorityCreate</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">POST /do</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Create new priority (level 1-5)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>priorityRead</code></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">POST /do</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Read priority by ID</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>priorityRead</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">POST /do</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Read priority by ID</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>priorityList</code></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">POST /do</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">List all priorities (ordered by level)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>priorityList</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">POST /do</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">List all priorities (ordered by level)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>priorityModify</code></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">POST /do</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Update priority fields</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>priorityModify</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">POST /do</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Update priority fields</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>priorityRemove</code></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">POST /do</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Soft-delete priority</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>priorityRemove</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">POST /do</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Soft-delete priority</td>
                     </tr>
                 </tbody>
             </table>
@@ -388,122 +388,122 @@
             
             <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
                 <thead>
-                    <tr style="background: #f5f5f5;">
-                        <th style="border: 1px solid #ddd; padding: 8px;">JIRA Feature</th>
-                        <th style="border: 1px solid #ddd; padding: 8px;">HelixTrack Status</th>
-                        <th style="border: 1px solid #ddd; padding: 8px;">Implementation</th>
+                     <tr style="background: var(--section-bg);">
+                        <th style="border: 1px solid var(--border-color); padding: 8px;">JIRA Feature</th>
+                        <th style="border: 1px solid var(--border-color); padding: 8px;">HelixTrack Status</th>
+                        <th style="border: 1px solid var(--border-color); padding: 8px;">Implementation</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Core Ticketing</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">V1</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Core Ticketing</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">V1</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Priorities</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Phase 1 (5 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Priorities</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Phase 1 (5 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Resolutions</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Phase 1 (5 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Resolutions</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Phase 1 (5 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Versions</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Phase 1 (13 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Versions</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Phase 1 (13 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Watchers</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Phase 1 (3 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Watchers</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Phase 1 (3 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Saved Filters</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Phase 1 (6 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Saved Filters</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Phase 1 (6 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Custom Fields</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Phase 1 (13 actions, 11 types)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Custom Fields</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Phase 1 (13 actions, 11 types)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Workflows</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Workflow Engine (23 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Workflows</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Workflow Engine (23 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Kanban Boards</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Board System (12 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Kanban Boards</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Board System (12 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Scrum/Sprints</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Cycle System (11 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Scrum/Sprints</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Cycle System (11 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Components</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Component System (12 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Components</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Component System (12 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Labels</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Label System (16 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Labels</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Label System (16 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Attachments</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Asset System (14 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Attachments</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Asset System (14 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Git Integration</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Repository System (17 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Git Integration</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Repository System (17 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Multi-tenancy</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Org Hierarchy (28 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Multi-tenancy</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Org Hierarchy (28 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Permissions</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Permission System (15 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Permissions</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Permission System (15 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Audit Logs</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Audit System (5 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Audit Logs</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Audit System (5 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Reports</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Report System (9 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Reports</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Report System (9 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Extensions</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">✅ Complete</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Extension Registry (8 actions)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Extensions</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">✅ Complete</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Extension Registry (8 actions)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Advanced Roadmaps</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">⏳ Planned</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Phase 3</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Advanced Roadmaps</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">⏳ Planned</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Phase 3</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Dashboards</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">⏳ Planned</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Phase 3</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>Dashboards</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">⏳ Planned</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Phase 3</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>JQL-like Query</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">⏳ Planned</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Phase 3</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><strong>JQL-like Query</strong></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">⏳ Planned</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Phase 3</td>
                     </tr>
                 </tbody>
             </table>

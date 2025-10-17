@@ -58,7 +58,7 @@
             <p class="section-subtitle">Complete guide for installation, configuration, and usage</p>
         </div>
         
-        <div class="manual-content" style="background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); line-height: 1.6; font-family: 'Inter', sans-serif;">
+         <div class="manual-content" style="background: var(--card-bg); padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px var(--shadow-color); line-height: 1.6; font-family: 'Inter', sans-serif; color: var(--text-color); border: 1px solid var(--border-color);">
             <h1>HelixTrack Core - User Manual</h1>
             
             <h2>Table of Contents</h2>
@@ -497,37 +497,37 @@ docker run -d \
             <h4>Quick Reference</h4>
             <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
                 <thead>
-                    <tr style="background: #f5f5f5;">
-                        <th style="border: 1px solid #ddd; padding: 8px;">Action Pattern</th>
-                        <th style="border: 1px solid #ddd; padding: 8px;">Description</th>
-                        <th style="border: 1px solid #ddd; padding: 8px;">Example</th>
+                     <tr style="background: var(--section-bg);">
+                        <th style="border: 1px solid var(--border-color); padding: 8px;">Action Pattern</th>
+                        <th style="border: 1px solid var(--border-color); padding: 8px;">Description</th>
+                        <th style="border: 1px solid var(--border-color); padding: 8px;">Example</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>{feature}Create</code></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Create new entity</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>priorityCreate</code>, <code>boardCreate</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>{feature}Create</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Create new entity</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>priorityCreate</code>, <code>boardCreate</code></td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>{feature}Read</code></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Read entity by ID</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>versionRead</code>, <code>cycleRead</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>{feature}Read</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Read entity by ID</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>versionRead</code>, <code>cycleRead</code></td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>{feature}List</code></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">List all entities</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>resolutionList</code>, <code>teamList</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>{feature}List</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">List all entities</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>resolutionList</code>, <code>teamList</code></td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>{feature}Modify</code></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Update entity</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>customFieldModify</code>, <code>labelModify</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>{feature}Modify</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Update entity</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>customFieldModify</code>, <code>labelModify</code></td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>{feature}Remove</code></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Soft-delete entity</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><code>workflowRemove</code>, <code>assetRemove</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>{feature}Remove</code></td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Soft-delete entity</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;"><code>workflowRemove</code>, <code>assetRemove</code></td>
                     </tr>
                 </tbody>
             </table>
@@ -590,32 +590,32 @@ curl -X POST http://localhost:8080/do \
             <h3>Error Codes</h3>
             <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
                 <thead>
-                    <tr style="background: #f5f5f5;">
-                        <th style="border: 1px solid #ddd; padding: 8px;">Code</th>
-                        <th style="border: 1px solid #ddd; padding: 8px;">Range</th>
-                        <th style="border: 1px solid #ddd; padding: 8px;">Description</th>
+                     <tr style="background: var(--section-bg);">
+                        <th style="border: 1px solid var(--border-color); padding: 8px;">Code</th>
+                        <th style="border: 1px solid var(--border-color); padding: 8px;">Range</th>
+                        <th style="border: 1px solid var(--border-color); padding: 8px;">Description</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">-1</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">-</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Success (no error)</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">-1</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">-</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Success (no error)</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">1000-1009</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Request</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Request-related errors</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">1000-1009</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Request</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Request-related errors</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">2000-2006</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">System</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">System-related errors</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">2000-2006</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">System</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">System-related errors</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">3000-3005</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Entity</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Entity-related errors</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">3000-3005</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Entity</td>
+                        <td style="border: 1px solid var(--border-color); padding: 8px;">Entity-related errors</td>
                     </tr>
                 </tbody>
             </table>
