@@ -9,8 +9,9 @@ This directory contains the professional enterprise website for HelixTrack Core,
 The website is a modern, responsive single-page application showcasing HelixTrack Core V3.0 as the open-source JIRA alternative. It features:
 
  - **297 API Actions** coverage
-- **1,375 Tests** with 98.8% pass rate
-- **100% JIRA Feature Parity** ✅ ACHIEVED
+ - **1,375 Tests** with 98.8% pass rate
+ - **100% JIRA Feature Parity** ✅ ACHIEVED
+ - **Robust Error Handling** with localized messages across all clients
 - **Complete Documentation** links
 - **Automated Build & Test Pipeline**
 - **Multiple Download Options** (binary, Docker, source)

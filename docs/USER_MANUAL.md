@@ -7,9 +7,10 @@
 3. [Configuration](#configuration)
 4. [Running the Application](#running-the-application)
 5. [API Reference](#api-reference)
-6. [Testing](#testing)
-7. [Troubleshooting](#troubleshooting)
-8. [Architecture](#architecture)
+6. [Error Handling](#error-handling)
+7. [Testing](#testing)
+8. [Troubleshooting](#troubleshooting)
+9. [Architecture](#architecture)
 
 ## Introduction
 
@@ -202,6 +203,96 @@ docker run -d \
   -v /path/to/database:/app/Database \
   helixtrack-core:latest
 ```
+
+## Error Handling
+
+HelixTrack provides comprehensive error handling across all client applications and the Core API.
+
+### Error Response Format
+
+All API responses follow a consistent error format:
+
+```json
+{
+  "errorCode": 1008,
+  "errorMessage": "Unauthorized",
+  "errorMessageLocalised": "You do not have permission to access this resource",
+  "data": null
+}
+```
+
+### Error Categories
+
+#### Request Errors (100X)
+- **1000** - Invalid request format
+- **1001** - Invalid action specified
+- **1002** - Missing JWT token
+- **1003** - Invalid or expired JWT token
+- **1004** - Missing object type
+- **1005** - Invalid object type
+- **1006** - Missing required data
+- **1007** - Invalid data format
+- **1008** - Unauthorized access
+- **1009** - Insufficient permissions
+
+#### System Errors (200X)
+- **2000** - Internal server error
+- **2001** - Database connection error
+- **2002** - Service temporarily unavailable
+- **2003** - Configuration error
+- **2004** - Authentication service error
+- **2005** - Permission service error
+- **2006** - Extension service error
+
+#### Entity Errors (300X)
+- **3000** - Entity not found
+- **3001** - Entity already exists
+- **3002** - Entity validation failed
+- **3003** - Failed to delete entity
+- **3004** - Failed to update entity
+- **3005** - Failed to create entity
+- **3006** - Version conflict
+
+### Client Applications
+
+#### Web Client
+- Automatic error detection and user-friendly message display
+- Retry mechanisms for temporary errors
+- Authentication redirect for auth errors
+- Comprehensive error logging
+
+#### Desktop Client
+- Toast notifications with error-specific styling
+- Enhanced retry options for retryable errors
+- Platform-specific error recovery
+- Detailed error reporting
+
+#### Android Client
+- Structured error handling with localization
+- Base classes for consistent error processing
+- User-friendly error messages in native language
+- Retry and recovery options
+
+### Error Recovery
+
+#### Automatic Recovery
+- Network errors are automatically retried
+- Temporary service errors trigger retry logic
+- Authentication errors redirect to login
+
+#### User-Initiated Recovery
+- Validation errors show correction guidance
+- Permission errors provide access request options
+- Configuration errors offer setup assistance
+
+#### Best Practices
+1. Always check `errorCode` for programmatic handling
+2. Display `errorMessageLocalised` to users
+3. Implement retry logic for retryable errors (2002-2006)
+4. Redirect to authentication for auth errors (1002, 1003, 1008)
+5. Provide clear guidance for validation errors (1006, 1007, 3002)
+
+For detailed error handling implementation, see the [Error Handling Guide](../Application/ERROR_HANDLING_GUIDE.md).
 
 ## API Reference
 
