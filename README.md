@@ -23,10 +23,14 @@ The website is a modern, responsive single-page application showcasing HelixTrac
 Website/
 ├── docs/                        # GitHub Pages directory
 │   ├── index.html               # Main website (single-page)
+│   ├── diagrams.html            # Architecture diagrams page (NEW)
 │   ├── style.css                # Professional styling (~860 lines)
 │   ├── script.js                # Interactive JavaScript (~400 lines)
 │   └── assets/
-│       └── Wide_Black.png       # HelixTrack logo
+│       ├── Logo.png             # HelixTrack logo
+│       └── diagrams/            # Architecture diagrams (NEW)
+│           ├── *.png            # 5 high-resolution PNG diagrams
+│           └── *.drawio         # 5 editable DrawIO source files
 └── README.md                    # This file
 ```
 
@@ -57,30 +61,38 @@ Website/
    - Syntax-highlighted examples
    - Feature list with benefits
 
-5. **Statistics Section**
+5. **Architecture Diagrams Page** (NEW)
+   - Dedicated page with 5 comprehensive diagrams
+   - System architecture, database schema, API flows, auth/permissions, microservices
+   - Click-to-zoom modal viewer for full-size images
+   - Download links for PNG and DrawIO source files
+   - Detailed descriptions and key metrics for each diagram
+   - Fully responsive design with mobile support
+
+6. **Statistics Section**
    - Animated counters on scroll
    - 4 key metrics
    - Glassmorphism card design
 
-6. **Documentation Section**
+7. **Documentation Section**
    - 4 documentation types
    - Direct links to GitHub
    - Card-based layout
 
-7. **Download Section**
+8. **Download Section**
    - 3 download methods (Binary, Docker, Source)
    - Installation command examples
    - Quick-start instructions
 
-8. **Contact Section**
+9. **Contact Section**
    - 4 contact methods
    - External links to GitHub, Discord, Email
 
-9. **Professional Footer**
-   - Site map with navigation
-   - Quick links to documentation
-   - Legal information
-   - Social media links
+10. **Professional Footer**
+    - Site map with navigation
+    - Quick links to documentation
+    - Legal information
+    - Social media links
 
 ### Technical Features
 

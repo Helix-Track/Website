@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HelixTrack Core - Comprehensive architecture diagrams showing system design, database schema, API flows, authentication, and microservices interactions.">
+    <meta name="keywords" content="architecture diagrams, database schema, API documentation, microservices, system design, HelixTrack">
+    <meta name="author" content="HelixTrack Project">
+    <title>Architecture Diagrams - HelixTrack Core</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .diagrams-hero {
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .diagrams-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .diagrams-hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .diagram-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .diagram-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .diagram-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-bottom: 3px solid #0066cc;
+        }
+
+        .diagram-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 0.5rem;
+        }
+
+        .diagram-header .meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .diagram-header .description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .diagram-image {
+            padding: 2rem;
+            background: white;
+            text-align: center;
+        }
+
+        .diagram-image img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .diagram-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .diagram-details {
+            padding: 2rem;
+            background: #f8f9fa;
+        }
+
+        .diagram-details h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+
+        .diagram-details ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .diagram-details li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .diagram-details li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .diagram-actions {
+            padding: 1.5rem 2rem;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-diagram {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-view-png {
+            background: #0066cc;
+            color: white;
+        }
+
+        .btn-view-png:hover {
+            background: #0052a3;
+            transform: translateY(-2px);
+        }
+
+        .btn-download-drawio {
+            background: #00cc66;
+            color: white;
+        }
+
+        .btn-download-drawio:hover {
+            background: #00b359;
+            transform: translateY(-2px);
+        }
+
+        .btn-download-png {
+            background: #ff6600;
+            color: white;
+        }
+
+        .btn-download-png:hover {
+            background: #e55a00;
+            transform: translateY(-2px);
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0066cc;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        /* Modal for full-size viewing */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            padding: 2rem;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 95%;
+            max-height: 95vh;
+            object-fit: contain;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #ff6600;
+        }
+
+        @media (max-width: 768px) {
+            .diagrams-hero h1 {
+                font-size: 2rem;
+            }
+
+            .diagram-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .diagram-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="assets/Logo.png" alt="HelixTrack Logo" class="logo-img">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#features" class="nav-link">Features</a></li>
+                    <li><a href="index.html#api" class="nav-link">API</a></li>
+                    <li><a href="diagrams.html" class="nav-link active">Diagrams</a></li>
+                    <li><a href="index.html#docs" class="nav-link">Documentation</a></li>
+                    <li><a href="index.html#download" class="nav-link">Download</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="https://github.com/Helix-Track/Core" class="btn btn-primary" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="diagrams-hero">
+        <div class="container">
+            <h1>Architecture Diagrams</h1>
+            <p>
+                Comprehensive visual documentation of HelixTrack Core V3.0 architecture,
+                database schema, API flows, authentication systems, and microservices interactions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section style="padding: 4rem 0; background: #f8f9fa;">
+        <div class="container">
+
+            <!-- Diagram 1: System Architecture -->
+            <div class="diagram-card">
+                <div class="diagram-header">
+                    <h2>1. System Architecture Overview</h2>
+                    <div class="meta">
+                        <strong>Files:</strong> 01-system-architecture.drawio | 01-system-architecture.png
+                    </div>
+                    <p class="description">
+                        Complete multi-layer system architecture showing all components from client applications
+                        to database layer, including middleware, handlers, and monitoring systems.
+                    </p>
+                </div>
+
+                <div class="diagram-image">
+                    <img src="assets/diagrams/01-system-architecture.png"
+                         alt="System Architecture Overview"
+                         onclick="openModal(this.src)">
+                </div>
+
+                <div class="diagram-details">
+                    <h3>Key Components:</h3>
+                    <ul>
+                        <li><strong>Client Layer:</strong> Web, Desktop (Tauri), Android, iOS, and API clients</li>
+                        <li><strong>Core API Layer:</strong> Unified /do endpoint with 282 actions</li>
+                        <li><strong>Middleware:</strong> JWT validation, CORS, logging, rate limiting, WebSocket support</li>
+                        <li><strong>Handlers:</strong> V1 (144 actions), Phase 1 (45 actions), Phase 2 (62 actions), Phase 3 (31 actions)</li>
+                        <li><strong>Database Layer:</strong> SQLite/PostgreSQL abstraction with V3 schema (89 tables)</li>
+                        <li><strong>Monitoring Layer:</strong> Structured logging, health checks, metrics, audit trail</li>
+                    </ul>
+
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value">282</div>
+                            <div class="metric-label">API Actions</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">89</div>
+                            <div class="metric-label">Database Tables</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">1,375</div>
+                            <div class="metric-label">Tests (98.8% pass)</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">50K+</div>
+                            <div class="metric-label">Requests/Second</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="diagram-actions">
+                    <a href="assets/diagrams/01-system-architecture.png" target="_blank" class="btn-diagram btn-view-png">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        View PNG
+                    </a>
+                    <a href="assets/diagrams/01-system-architecture.drawio" download class="btn-diagram btn-download-drawio">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download DrawIO
+                    </a>
+                    <a href="assets/diagrams/01-system-architecture.png" download class="btn-diagram btn-download-png">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download PNG
+                    </a>
+                </div>
+            </div>
+
+            <!-- Diagram 2: Database Schema -->
+            <div class="diagram-card">
+                <div class="diagram-header">
+                    <h2>2. Database Schema Overview</h2>
+                    <div class="meta">
+                        <strong>Files:</strong> 02-database-schema-overview.drawio | 02-database-schema-overview.png
+                    </div>
+                    <p class="description">
+                        Complete entity-relationship diagram showing all 89 tables organized by domain,
+                        including core features (V1), JIRA parity features (Phase 1), agile enhancements (Phase 2),
+                        and collaboration features (Phase 3).
+                    </p>
+                </div>
+
+                <div class="diagram-image">
+                    <img src="assets/diagrams/02-database-schema-overview.png"
+                         alt="Database Schema Overview"
+                         onclick="openModal(this.src)">
+                </div>
+
+                <div class="diagram-details">
+                    <h3>Schema Domains:</h3>
+                    <ul>
+                        <li><strong>Core Domain (V1):</strong> 61 tables - Projects, Tickets, Comments, Workflows, Boards, Cycles, Multi-tenancy</li>
+                        <li><strong>Phase 1 - JIRA Parity:</strong> +11 tables - Priorities, Resolutions, Versions, Watchers, Filters, Custom Fields</li>
+                        <li><strong>Phase 2 - Agile Enhancements:</strong> +15 tables - Epics, Subtasks, Work Logs, Project Roles, Security Levels, Dashboards</li>
+                        <li><strong>Phase 3 - Collaboration:</strong> +2 tables - Voting System, Project Categories, Comment Mentions</li>
+                        <li><strong>Mapping Tables:</strong> 40+ many-to-many relationship tables and metadata extensions</li>
+                    </ul>
+
+                    <h3>Design Patterns:</h3>
+                    <ul>
+                        <li>UUID for all IDs (globally unique identifiers)</li>
+                        <li>Soft deletes (deleted column for data retention)</li>
+                        <li>Audit timestamps (created, modified for tracking)</li>
+                        <li>Hierarchical permissions (context-based access control)</li>
+                        <li>JSON for flexible configuration storage</li>
+                        <li>Denormalized vote_count for performance optimization</li>
+                    </ul>
+                </div>
+
+                <div class="diagram-actions">
+                    <a href="assets/diagrams/02-database-schema-overview.png" target="_blank" class="btn-diagram btn-view-png">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        View PNG
+                    </a>
+                    <a href="assets/diagrams/02-database-schema-overview.drawio" download class="btn-diagram btn-download-drawio">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download DrawIO
+                    </a>
+                    <a href="assets/diagrams/02-database-schema-overview.png" download class="btn-diagram btn-download-png">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download PNG
+                    </a>
+                </div>
+            </div>
+
+            <!-- Diagram 3: API Request Flow -->
+            <div class="diagram-card">
+                <div class="diagram-header">
+                    <h2>3. API Request/Response Flow</h2>
+                    <div class="meta">
+                        <strong>Files:</strong> 03-api-request-flow.drawio | 03-api-request-flow.png
+                    </div>
+                    <p class="description">
+                        Detailed step-by-step flow showing how API requests are processed through the unified /do endpoint,
+                        from client request through middleware, handler routing, database operations, to response delivery.
+                    </p>
+                </div>
+
+                <div class="diagram-image">
+                    <img src="assets/diagrams/03-api-request-flow.png"
+                         alt="API Request/Response Flow"
+                         onclick="openModal(this.src)">
+                </div>
+
+                <div class="diagram-details">
+                    <h3>Request Flow Steps:</h3>
+                    <ul>
+                        <li><strong>1. Client Request:</strong> POST /do with action, JWT, object, and data payload</li>
+                        <li><strong>2. Gin Router:</strong> Parse JSON, validate format, extract action parameter</li>
+                        <li><strong>3. Middleware Stack:</strong> JWT validation, CORS handling, request logging, metrics tracking</li>
+                        <li><strong>4. Handler Router:</strong> Switch on action (282 total actions available)</li>
+                        <li><strong>5. Permission Check:</strong> Via Permissions Engine using RBAC model</li>
+                        <li><strong>6. Business Logic:</strong> Execute action handler (e.g., handlePriorityCreate())</li>
+                        <li><strong>7. Database Layer:</strong> Execute SQL via abstraction (SQLite/PostgreSQL)</li>
+                        <li><strong>8. Response Builder:</strong> Build success/error response with standardized format</li>
+                        <li><strong>9. Client Response:</strong> HTTP 200 OK with JSON response or appropriate error</li>
+                    </ul>
+
+                    <h3>Error Handling:</h3>
+                    <ul>
+                        <li><strong>1000 series:</strong> Invalid Request, Missing Parameters</li>
+                        <li><strong>1002/1003:</strong> Missing/Invalid JWT Token</li>
+                        <li><strong>1009:</strong> Permission Denied (insufficient privileges)</li>
+                        <li><strong>2001:</strong> Database Error (connection, query failures)</li>
+                        <li><strong>3000:</strong> Entity Not Found (resource doesn't exist)</li>
+                        <li><strong>3002:</strong> Validation Failed (invalid data format)</li>
+                    </ul>
+
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value">50K+</div>
+                            <div class="metric-label">Requests/Second</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">&lt;5ms</div>
+                            <div class="metric-label">Avg Response Time</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">&lt;1ms</div>
+                            <div class="metric-label">JWT Validation</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">282</div>
+                            <div class="metric-label">API Actions</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="diagram-actions">
+                    <a href="assets/diagrams/03-api-request-flow.png" target="_blank" class="btn-diagram btn-view-png">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        View PNG
+                    </a>
+                    <a href="assets/diagrams/03-api-request-flow.drawio" download class="btn-diagram btn-download-drawio">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download DrawIO
+                    </a>
+                    <a href="assets/diagrams/03-api-request-flow.png" download class="btn-diagram btn-download-png">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download PNG
+                    </a>
+                </div>
+            </div>
+
+            <!-- Diagram 4: Auth & Permissions -->
+            <div class="diagram-card">
+                <div class="diagram-header">
+                    <h2>4. Authentication & Permissions Flow</h2>
+                    <div class="meta">
+                        <strong>Files:</strong> 04-auth-permissions-flow.drawio | 04-auth-permissions-flow.png
+                    </div>
+                    <p class="description">
+                        Comprehensive diagram showing JWT-based authentication and RBAC (Role-Based Access Control) authorization flows,
+                        including token generation, validation, permission checking, and security levels.
+                    </p>
+                </div>
+
+                <div class="diagram-image">
+                    <img src="assets/diagrams/04-auth-permissions-flow.png"
+                         alt="Authentication & Permissions Flow"
+                         onclick="openModal(this.src)">
+                </div>
+
+                <div class="diagram-details">
+                    <h3>Authentication Flow (JWT):</h3>
+                    <ul>
+                        <li><strong>1. Login Request:</strong> POST /do with username/password credentials</li>
+                        <li><strong>2. Core → Auth Service:</strong> Validate credentials (if service enabled) or local auth</li>
+                        <li><strong>3. Generate JWT Token:</strong> Include claims (username, role, permissions, expiration)</li>
+                        <li><strong>4. Return Token:</strong> Client receives token for subsequent authenticated requests</li>
+                    </ul>
+
+                    <h3>JWT Payload Structure:</h3>
+                    <ul>
+                        <li><strong>sub:</strong> "authentication" (subject identifier)</li>
+                        <li><strong>username:</strong> User's unique username</li>
+                        <li><strong>name:</strong> User's full display name</li>
+                        <li><strong>role:</strong> admin | user | viewer | guest</li>
+                        <li><strong>permissions:</strong> READ | CREATE | UPDATE | DELETE | ALL</li>
+                        <li><strong>exp:</strong> Token expiration timestamp</li>
+                    </ul>
+
+                    <h3>Authorization Flow (RBAC):</h3>
+                    <ul>
+                        <li><strong>1. Request with JWT:</strong> POST /do with action, jwt, object, data</li>
+                        <li><strong>2. JWT Validation:</strong> Parse, verify signature, check expiration, extract claims</li>
+                        <li><strong>3. Permission Check:</strong> permService.CheckPermission(username, object, action)</li>
+                        <li><strong>4. Result:</strong> ALLOWED ✓ (proceed) or DENIED ✗ (error 1009)</li>
+                    </ul>
+
+                    <h3>Permissions Engine:</h3>
+                    <ul>
+                        <li><strong>Roles:</strong> admin (ALL), user (READ/CREATE/UPDATE), viewer (READ), guest (limited READ)</li>
+                        <li><strong>Permission Values:</strong> READ (1), CREATE (2), UPDATE (3), DELETE/ALL (5)</li>
+                        <li><strong>Contexts:</strong> Hierarchical - node → account → organization → team/project</li>
+                        <li><strong>Security Levels:</strong> Confidential, Internal, Public (project-level)</li>
+                        <li><strong>Project Roles:</strong> Administrator, Developer, Reporter, Viewer</li>
+                    </ul>
+
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value">&lt;1ms</div>
+                            <div class="metric-label">Permission Check</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4</div>
+                            <div class="metric-label">User Roles</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">5</div>
+                            <div class="metric-label">Permission Levels</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">3</div>
+                            <div class="metric-label">Security Levels</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="diagram-actions">
+                    <a href="assets/diagrams/04-auth-permissions-flow.png" target="_blank" class="btn-diagram btn-view-png">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        View PNG
+                    </a>
+                    <a href="assets/diagrams/04-auth-permissions-flow.drawio" download class="btn-diagram btn-download-drawio">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download DrawIO
+                    </a>
+                    <a href="assets/diagrams/04-auth-permissions-flow.png" download class="btn-diagram btn-download-png">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download PNG
+                    </a>
+                </div>
+            </div>
+
+            <!-- Diagram 5: Microservices Interaction -->
+            <div class="diagram-card">
+                <div class="diagram-header">
+                    <h2>5. Microservices Interaction</h2>
+                    <div class="meta">
+                        <strong>Files:</strong> 05-microservices-interaction.drawio | 05-microservices-interaction.png
+                    </div>
+                    <p class="description">
+                        Complete overview of microservices architecture showing HTTP-based communication between
+                        HelixTrack Core and mandatory/optional services, including deployment scenarios and service configurations.
+                    </p>
+                </div>
+
+                <div class="diagram-image">
+                    <img src="assets/diagrams/05-microservices-interaction.png"
+                         alt="Microservices Interaction"
+                         onclick="openModal(this.src)">
+                </div>
+
+                <div class="diagram-details">
+                    <h3>Core Service (HelixTrack Core):</h3>
+                    <ul>
+                        <li><strong>Technology:</strong> Go 1.22+ / Gin Gonic web framework</li>
+                        <li><strong>Port:</strong> 8080 (configurable via JSON config)</li>
+                        <li><strong>Protocol:</strong> HTTP/HTTPS with TLS/SSL support</li>
+                        <li><strong>Database:</strong> SQLite (development) / PostgreSQL (production)</li>
+                        <li><strong>Features:</strong> 282 API Actions across V1, Phase 1, Phase 2, Phase 3</li>
+                        <li><strong>Schema:</strong> V3 (89 tables with full JIRA parity)</li>
+                        <li><strong>Performance:</strong> 50K+ requests/second with <5ms response time</li>
+                    </ul>
+
+                    <h3>Mandatory Services:</h3>
+                    <ul>
+                        <li><strong>Authentication Service (Port 8081):</strong> JWT token validation, endpoints: /authenticate, /validate, /refresh (can be disabled for testing)</li>
+                        <li><strong>Permissions Engine (Port 8082):</strong> RBAC permission checks, endpoints: /check, /permissions/:user, /grant (can be disabled for testing)</li>
+                    </ul>
+
+                    <h3>Optional Extensions:</h3>
+                    <ul>
+                        <li><strong>Lokalisation (Port 8083):</strong> i18n/l10n multi-language support with translation management</li>
+                        <li><strong>Times (Port 8084):</strong> Time tracking, timesheets, time reports, work log analysis</li>
+                        <li><strong>Documents (Port 8085):</strong> Document management, file storage, versioning, metadata</li>
+                        <li><strong>Chats (Port 8086):</strong> Real-time chat with Slack, Telegram, WhatsApp integrations, rooms, mentions, presence</li>
+                    </ul>
+
+                    <h3>HTTP Communication:</h3>
+                    <ul>
+                        <li>JSON over HTTP/HTTPS with RESTful conventions</li>
+                        <li>Timeout: 30 seconds (configurable per service)</li>
+                        <li>Retry: 3 attempts with exponential backoff</li>
+                        <li>Circuit breaker pattern for fault tolerance</li>
+                        <li>Connection pooling for performance optimization</li>
+                        <li>TLS/SSL support for encrypted communication</li>
+                    </ul>
+
+                    <h3>Deployment Scenarios:</h3>
+                    <ul>
+                        <li><strong>Development (Single Machine):</strong> All services on localhost with different ports</li>
+                        <li><strong>Production (Distributed):</strong> Services on different machines/clusters with load balancing</li>
+                        <li><strong>High Availability:</strong> Kubernetes/Docker Swarm with auto-scaling, service mesh, health checks</li>
+                    </ul>
+                </div>
+
+                <div class="diagram-actions">
+                    <a href="assets/diagrams/05-microservices-interaction.png" target="_blank" class="btn-diagram btn-view-png">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        View PNG
+                    </a>
+                    <a href="assets/diagrams/05-microservices-interaction.drawio" download class="btn-diagram btn-download-drawio">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download DrawIO
+                    </a>
+                    <a href="assets/diagrams/05-microservices-interaction.png" download class="btn-diagram btn-download-png">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download PNG
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/Logo.png" alt="HelixTrack Logo" class="footer-logo">
+                    <p>The Open-Source JIRA Alternative for the Free World</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#api">API</a></li>
+                        <li><a href="diagrams.html">Diagrams</a></li>
+                        <li><a href="index.html#docs">Documentation</a></li>
+                        <li><a href="index.html#download">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="book/index.html">User Guide</a></li>
+                        <li><a href="manual.html">Manual</a></li>
+                        <li><a href="https://github.com/Helix-Track/Core">GitHub</a></li>
+                        <li><a href="https://github.com/Helix-Track/Core/issues">Issues</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://t.me/helixtrack">Telegram</a></li>
+                        <li><a href="https://yandex.ru/chat/#/join/8813765f-4288-49e9-8c65-1e088f988587">Yandex Chat</a></li>
+                        <li><a href="mailto:svyaz.s.ulitkami@helixtrack.ru">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HelixTrack Project. Licensed under the MIT License.</p>
+                <p>Version 4.0.0 | 297 API Actions | 100% JIRA Parity | 100% Open Source</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Full-Size Image Viewing -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Modal functionality for full-size image viewing
+        function openModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = src;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
