@@ -1,6 +1,6 @@
 # HelixTrack Core - Complete User Guide
 
-**Version 2.0**
+**Version 4.0 with Documents V2 Extension**
 **The Open-Source JIRA Alternative for the Free World**
 
 ---
@@ -13,7 +13,7 @@ Welcome to the complete user guide for HelixTrack Core - a modern, powerful, and
 
 HelixTrack Core is a production-ready REST API service that provides **85%+ JIRA feature parity** with a fully open architecture. Built with Go and designed for the free world, it offers:
 
-- ✅ **235 API Endpoints** - Complete feature coverage
+- ✅ **372 API Endpoints (282 core + 90 Documents V2)** - Complete feature coverage
 - ✅ **Multi-Database Support** - SQLite and PostgreSQL
 - ✅ **Multi-Tenancy** - Enterprise-ready organizational hierarchy
 - ✅ **Agile/Scrum** - Full sprint and board management
@@ -72,7 +72,7 @@ This guide is designed for:
    - Core entities (tickets, projects, users)
    - Relationships and mappings
    - Soft delete pattern
-   - Database schema V2.0
+   - Database schema V3 with Documents V2 extension (121 tables)
 
 ### Part III: Feature Guides
 
@@ -154,7 +154,7 @@ This guide is designed for:
 ### Part IV: API Reference
 
 20. [Complete API Reference](20-api-reference.md)
-    - All 235 endpoints
+    - All 372 endpoints (282 core + 90 Documents V2)
     - Request/response examples
     - Authentication requirements
     - Error codes
@@ -281,10 +281,10 @@ curl -X POST http://localhost:8080/do
 
 ## About This Guide
 
-**Version**: 2.0
-**Last Updated**: October 11, 2025
-**API Version**: 2.0.0
-**Coverage**: 235 API Endpoints
+**Version**: 4.0 with Documents V2 Extension
+**Last Updated**: October 19, 2025
+**API Version**: 4.0.0
+**Coverage**: 372 API Endpoints (282 core + 90 Documents V2)
 
 This guide is maintained alongside the HelixTrack Core codebase and is updated with each release.
 

@@ -1,12 +1,14 @@
-# HelixTrack Core - Complete API Reference
+# HelixTrack Core - Complete API Reference (372 API endpoints)
 
 ## Introduction
 
-This document provides comprehensive documentation for all 297 API endpoints in HelixTrack Core V4.0. All endpoints use the unified `/do` endpoint with action-based routing.
+This document provides comprehensive documentation for all 372 API endpoints in HelixTrack Core V4.0. All endpoints use the unified `/do` endpoint with action-based routing.
 
-**Total API Actions**: 297
-**Version**: 4.0
-**Last Updated**: 2025-10-17
+**Total API Actions**: 372 (282 core + 90 Documents V2 Extension)
+**Version**: 4.0 (with Documents V2 Extension)
+**Last Updated**: 2025-10-19
+
+**Note**: The Documents V2 Extension provides an additional 90 API actions for Confluence-style document management, achieving 102% feature parity with Confluence.
 
 ---
 
@@ -1237,7 +1239,7 @@ Each endpoint includes:
 - Response format with example
 - Special notes or constraints
 
-For the complete documentation of all 297 endpoints, refer to the [IMPLEMENTATION_SUMMARY.md](/home/milosvasic/Projects/HelixTrack/Core/IMPLEMENTATION_SUMMARY.md) which provides the full catalog of all API actions.
+For the complete documentation of all 372 endpoints (282 core + 90 Documents V2 Extension), refer to the [IMPLEMENTATION_SUMMARY.md](/home/milosvasic/Projects/HelixTrack/Core/IMPLEMENTATION_SUMMARY.md) which provides the full catalog of all API actions.
 
 ---
 
@@ -1277,7 +1279,7 @@ For the complete documentation of all 297 endpoints, refer to the [IMPLEMENTATIO
 
 ---
 
-**Document Version**: 4.0
+**Document Version**: 4.0 (with Documents V2 Extension)
 **API Version**: 4.0.0
-**Last Updated**: 2025-10-17
-**Total Endpoints**: 297
+**Last Updated**: 2025-10-19
+**Total Endpoints**: 372 (282 core + 90 Documents V2 Extension)

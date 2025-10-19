@@ -6,11 +6,12 @@ This directory contains the professional enterprise website for HelixTrack Core,
 
 ## Overview
 
-The website is a modern, responsive single-page application showcasing HelixTrack Core V3.0 as the open-source JIRA alternative. It features:
+The website is a modern, responsive single-page application showcasing HelixTrack Core V4.0 with Documents V2 Extension as the open-source JIRA + Confluence alternative. It features:
 
- - **297 API Actions** coverage
- - **1,375 Tests** with 98.8% pass rate
+ - **372 API Actions** (282 core + 90 Documents V2 Extension)
+ - **1,769 Tests** (1,375 core @ 98.8% + 394 documents @ 100%)
  - **100% JIRA Feature Parity** ✅ ACHIEVED
+ - **102% Confluence Feature Parity** ✅ ACHIEVED (Documents V2)
  - **Robust Error Handling** with localized messages across all clients
 - **Complete Documentation** links
 - **Automated Build & Test Pipeline**
@@ -433,7 +434,7 @@ To improve the website:
 
 ---
 
-**Website Version**: 2.0
-**Last Updated**: October 12, 2025
+**Website Version**: 3.0
+**Last Updated**: October 19, 2025
 **Status**: ✅ Production Ready
-**HelixTrack Core**: V4.0 (297 API Actions, 1,425+ Tests, 98.8% Pass Rate, 100% JIRA Parity ✅)
+**HelixTrack Core**: V4.0 (372 API Actions, 1,769 Tests, 100% JIRA Parity + 102% Confluence Parity ✅)

@@ -290,7 +290,7 @@
         <div class="container">
             <h1>Architecture Diagrams</h1>
             <p>
-                Comprehensive visual documentation of HelixTrack Core V3.0 architecture,
+                Comprehensive visual documentation of HelixTrack Core V4.0 with Documents V2 Extension architecture,
                 database schema, API flows, authentication systems, and microservices interactions.
             </p>
         </div>
@@ -323,25 +323,25 @@
                     <h3>Key Components:</h3>
                     <ul>
                         <li><strong>Client Layer:</strong> Web, Desktop (Tauri), Android, iOS, and API clients</li>
-                        <li><strong>Core API Layer:</strong> Unified /do endpoint with 282 actions</li>
+                        <li><strong>Core API Layer:</strong> Unified /do endpoint with 372 actions (282 core + 90 Documents V2)</li>
                         <li><strong>Middleware:</strong> JWT validation, CORS, logging, rate limiting, WebSocket support</li>
-                        <li><strong>Handlers:</strong> V1 (144 actions), Phase 1 (45 actions), Phase 2 (62 actions), Phase 3 (31 actions)</li>
-                        <li><strong>Database Layer:</strong> SQLite/PostgreSQL abstraction with V3 schema (89 tables)</li>
+                        <li><strong>Handlers:</strong> V1 (144 actions), Phase 1 (45 actions), Phase 2 (62 actions), Phase 3 (31 actions), Documents V2 (90 actions)</li>
+                        <li><strong>Database Layer:</strong> SQLite/PostgreSQL abstraction with V4 schema (121 tables: 89 core V3 + 32 Documents V2)</li>
                         <li><strong>Monitoring Layer:</strong> Structured logging, health checks, metrics, audit trail</li>
                     </ul>
 
                     <div class="metrics">
                         <div class="metric">
-                            <div class="metric-value">282</div>
-                            <div class="metric-label">API Actions</div>
+                            <div class="metric-value">372</div>
+                            <div class="metric-label">API Actions (282 core + 90 Documents)</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">89</div>
-                            <div class="metric-label">Database Tables</div>
+                            <div class="metric-value">121</div>
+                            <div class="metric-label">Database Tables (89 core + 32 Documents)</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">1,375</div>
-                            <div class="metric-label">Tests (98.8% pass)</div>
+                            <div class="metric-value">1,769</div>
+                            <div class="metric-label">Tests (1,375 core + 394 Documents)</div>
                         </div>
                         <div class="metric">
                             <div class="metric-value">50K+</div>
@@ -502,8 +502,8 @@
                             <div class="metric-label">JWT Validation</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">282</div>
-                            <div class="metric-label">API Actions</div>
+                            <div class="metric-value">372</div>
+                            <div class="metric-label">API Actions (282 core + 90 Documents)</div>
                         </div>
                     </div>
                 </div>
@@ -663,8 +663,8 @@
                         <li><strong>Port:</strong> 8080 (configurable via JSON config)</li>
                         <li><strong>Protocol:</strong> HTTP/HTTPS with TLS/SSL support</li>
                         <li><strong>Database:</strong> SQLite (development) / PostgreSQL (production)</li>
-                        <li><strong>Features:</strong> 282 API Actions across V1, Phase 1, Phase 2, Phase 3</li>
-                        <li><strong>Schema:</strong> V3 (89 tables with full JIRA parity)</li>
+                        <li><strong>Features:</strong> 372 API Actions (282 core across V1, Phase 1, Phase 2, Phase 3 + 90 Documents V2)</li>
+                        <li><strong>Schema:</strong> V4 (121 tables: 89 core V3 with full JIRA parity + 32 Documents V2 for Confluence parity)</li>
                         <li><strong>Performance:</strong> 50K+ requests/second with <5ms response time</li>
                     </ul>
 
@@ -768,7 +768,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 HelixTrack Project. Licensed under the MIT License.</p>
-                <p>Version 4.0.0 | 297 API Actions | 100% JIRA Parity | 100% Open Source</p>
+                <p>Version 4.0.0 | 372 API Actions | 100% JIRA Parity | 102% Confluence Parity | 100% Open Source</p>
             </div>
         </div>
     </footer>

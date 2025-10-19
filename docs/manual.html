@@ -76,19 +76,19 @@
             <h2 id="introduction">Introduction</h2>
             <p>HelixTrack Core is a production-ready, modern REST API service built with Go and the Gin Gonic framework. It serves as the main microservice for the HelixTrack project - a JIRA alternative for the free world.</p>
             
-            <p><strong>Current Status</strong>: ✅ <strong>Version 3.0.0 - Full JIRA Parity Achieved</strong></p>
+            <p><strong>Current Status</strong>: ✅ <strong>Version 4.0.0 - Full JIRA Parity + Documents V2 Extension</strong></p>
             
             <h3>Key Features</h3>
             <ul>
                 <li>✅ <strong>100% JIRA Feature Parity</strong>: All 44 planned features implemented (V1 + Phase 1 + Phase 2 + Phase 3)</li>
-                <li>✅ <strong>282 API Actions</strong>: Complete API coverage (144 V1 + 45 Phase 1 + 62 Phase 2 + 31 Phase 3)</li>
+                <li>✅ <strong>372 API Actions (282 core + 90 Documents V2)</strong>: Complete API coverage (144 V1 + 45 Phase 1 + 62 Phase 2 + 31 Phase 3 + 90 Documents V2)</li>
                 <li>✅ <strong>Unified `/do` Endpoint</strong>: Action-based routing for all operations</li>
                 <li>✅ <strong>JWT Authentication</strong>: Secure token-based authentication</li>
-                <li>✅ <strong>Multi-Database Support</strong>: SQLite and PostgreSQL (V3 schema with 89 tables)</li>
+                <li>✅ <strong>Multi-Database Support</strong>: SQLite and PostgreSQL (121 database tables: 89 V3 core + 32 Documents V2)</li>
                 <li>✅ <strong>Modular Architecture</strong>: Pluggable authentication and permission services</li>
                 <li>✅ <strong>Extension System</strong>: Optional extension services (Chats, Documents, Times)</li>
                 <li>✅ <strong>Fully Decoupled</strong>: All components can run on separate machines or clusters</li>
-                <li>✅ <strong>Comprehensive Testing</strong>: 1,375 tests (98.8% pass rate, 71.9% average coverage)</li>
+                <li>✅ <strong>Comprehensive Testing</strong>: 1,769 tests (1,375 core @ 98.8% + 394 documents @ 100%, 71.9% average coverage)</li>
                 <li>✅ <strong>Production Ready</strong>: Proper logging, graceful shutdown, health checks, extreme performance (50,000+ req/s)</li>
             </ul>
             
@@ -437,9 +437,9 @@ docker run -d \
 }</code></pre>
             
             <h3>V3.0 Features - 100% JIRA Parity Achieved ✅</h3>
-            <p>HelixTrack Core V3.0 provides complete JIRA feature parity with <strong>282 API actions</strong> across all features (V1 + Phase 1 + Phase 2 + Phase 3). All planned features are now production-ready.</p>
-            
-            <p><strong>For complete API documentation with all 282 API actions</strong>, see <a href="API_REFERENCE_COMPLETE.md">API_REFERENCE_COMPLETE.md</a> or <a href="../JIRA_FEATURE_GAP_ANALYSIS.md">JIRA_FEATURE_GAP_ANALYSIS.md</a> for detailed feature comparison.</p>
+            <p>HelixTrack Core V3.0 provides complete JIRA feature parity with <strong>372 API Actions (282 core + 90 Documents V2)</strong> across all features (V1 + Phase 1 + Phase 2 + Phase 3 + Documents V2 Extension). All planned features are now production-ready.</p>
+
+            <p><strong>For complete API documentation with all 372 API actions</strong>, see <a href="API_REFERENCE_COMPLETE.md">API_REFERENCE_COMPLETE.md</a> or <a href="../JIRA_FEATURE_GAP_ANALYSIS.md">JIRA_FEATURE_GAP_ANALYSIS.md</a> for detailed feature comparison.</p>
             
             <h4>Feature Summary (All Phases Complete ✅)</h4>
             
@@ -492,7 +492,7 @@ docker run -d \
                 <li>Comment Mentions (6 actions) - @mention users in comments for notifications</li>
             </ul>
             
-            <p><strong>Total API Actions</strong>: 282 (144 V1 + 45 Phase 1 + 62 Phase 2 + 31 Phase 3)</p>
+            <p><strong>Total API Actions</strong>: 372 (144 V1 + 45 Phase 1 + 62 Phase 2 + 31 Phase 3 + 90 Documents V2)</p>
             
             <h4>Quick Reference</h4>
             <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
@@ -797,13 +797,13 @@ grep ERROR /tmp/htCoreLogs/htCore.log</code></pre>
             
             <hr>
             
-            <p><strong>Version:</strong> 3.0.0 (Full JIRA Parity Edition)</p>
-            <p><strong>Last Updated:</strong> 2025-10-12</p>
+            <p><strong>Version:</strong> 4.0.0 (Full JIRA Parity + Documents V2 Extension)</p>
+            <p><strong>Last Updated:</strong> 2025-10-19</p>
             <p><strong>Status:</strong> ✅ <strong>PRODUCTION READY - ALL FEATURES COMPLETE</strong></p>
             <p><strong>JIRA Parity:</strong> ✅ <strong>100% ACHIEVED</strong></p>
-            <p><strong>API Actions:</strong> 282 (144 V1 + 45 Phase 1 + 62 Phase 2 + 31 Phase 3)</p>
-            <p><strong>Database:</strong> V3 Schema with 89 tables</p>
-            <p><strong>Test Coverage:</strong> 1,375 tests (98.8% pass rate, 71.9% average coverage)</p>
+            <p><strong>API Actions:</strong> 372 (282 core + 90 Documents V2)</p>
+            <p><strong>Database:</strong> 121 Database Tables (89 core V3 + 32 Documents V2)</p>
+            <p><strong>Test Coverage:</strong> 1,769 tests (1,375 core @ 98.8% + 394 documents @ 100%, 71.9% average coverage)</p>
             <p><strong>License:</strong> See LICENSE file</p>
             <p><strong>Complete References:</strong></p>
             <ul>
@@ -851,7 +851,7 @@ grep ERROR /tmp/htCoreLogs/htCore.log</code></pre>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 HelixTrack Project. Licensed under the MIT License.</p>
-                <p>Version 4.0.0 | 297 API Actions | 100% JIRA Parity | 100% Open Source</p>
+                <p>Version 4.0.0 | 372 API Actions (282 core + 90 Documents V2) | 100% JIRA Parity | 100% Open Source</p>
             </div>
         </div>
     </footer>
