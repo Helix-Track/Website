@@ -101,6 +101,134 @@
         </div>
     </section>
 
+    <!-- HTTP/3 QUIC Highlight Banner -->
+    <section class="quic-banner">
+        <div class="container">
+            <div class="quic-banner-content">
+                <div class="quic-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                    </svg>
+                </div>
+                <div class="quic-text">
+                    <h3>Powered by HTTP/3 QUIC</h3>
+                    <p>All HelixTrack services use <strong>HTTP/3 over QUIC</strong> as the default communication protocol, delivering <strong>30-50% reduced latency</strong> compared to HTTP/2, with true multiplexing and built-in TLS 1.3 encryption for optimal performance and security.</p>
+                </div>
+                <div class="quic-stats">
+                    <div class="quic-stat">
+                        <span class="quic-stat-value">30-50%</span>
+                        <span class="quic-stat-label">Faster</span>
+                    </div>
+                    <div class="quic-stat">
+                        <span class="quic-stat-value">TLS 1.3</span>
+                        <span class="quic-stat-label">Encrypted</span>
+                    </div>
+                    <div class="quic-stat">
+                        <span class="quic-stat-value">0-RTT</span>
+                        <span class="quic-stat-label">Resumption</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .quic-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 0;
+            margin: 0;
+        }
+
+        .quic-banner-content {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 30px;
+            align-items: center;
+            color: white;
+        }
+
+        .quic-icon {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .quic-icon svg {
+            display: block;
+            color: #fff;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .quic-text h3 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .quic-text p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .quic-text strong {
+            font-weight: 600;
+            color: #ffd700;
+        }
+
+        .quic-stats {
+            display: flex;
+            gap: 30px;
+        }
+
+        .quic-stat {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .quic-stat-value {
+            display: block;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffd700;
+            margin-bottom: 5px;
+        }
+
+        .quic-stat-label {
+            display: block;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        @media (max-width: 968px) {
+            .quic-banner-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .quic-icon {
+                margin: 0 auto;
+            }
+
+            .quic-stats {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
