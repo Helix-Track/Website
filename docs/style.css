@@ -1,22 +1,27 @@
 /* HelixTrack Core - Professional Website Styling */
 
 :root {
-    --primary-color: #BCE63B;
-    --secondary-color: #7AA590;
-    --accent-color: #B2E3C2;
+    --primary-color: #22C55E;
+    --primary-light: #4ADE80;
+    --primary-dark: #16A34A;
+    --secondary-color: #10B981;
+    --accent-color: #86EFAC;
+    --success-color: #059669;
     --dark: #1a1a1a;
     --darker: #0d0d0d;
     --light: #f8f9fa;
     --gray: #6c757d;
     --white: #ffffff;
-    --gradient-primary: linear-gradient(135deg, #BCE63B 0%, #7AA590 100%);
-    --gradient-secondary: linear-gradient(135deg, #7AA590 0%, #B2E3C2 100%);
-    --gradient-accent: linear-gradient(135deg, #B2E3C2 0%, #BCE63B 100%);
+    --gradient-primary: linear-gradient(135deg, #22C55E 0%, #10B981 100%);
+    --gradient-secondary: linear-gradient(135deg, #10B981 0%, #86EFAC 100%);
+    --gradient-accent: linear-gradient(135deg, #86EFAC 0%, #22C55E 100%);
+    --gradient-hero: linear-gradient(135deg, #059669 0%, #10B981 50%, #22C55E 100%);
     --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
     --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+    --shadow-green: 0 10px 30px rgba(34, 197, 94, 0.3);
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
@@ -207,12 +212,13 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary {
     background: var(--gradient-primary);
     color: var(--white);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-green);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-xl);
+    background: var(--gradient-secondary);
 }
 
 .btn-outline {
@@ -238,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--gradient-dark);
+    background: var(--gradient-hero);
     color: var(--white);
     padding-top: 80px;
     overflow: hidden;
@@ -260,8 +266,8 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 0;
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
     background-size: 50px 50px;
     animation: gridMove 20s linear infinite;
 }
@@ -546,7 +552,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Stats Section */
 .stats-section {
     padding: 80px 0;
-    background: var(--gradient-dark);
+    background: var(--gradient-primary);
     color: var(--white);
 }
 
@@ -574,12 +580,14 @@ h1, h2, h3, h4, h5, h6 {
 .stat-icon {
     font-size: 3rem;
     margin-bottom: 15px;
+    filter: hue-rotate(90deg) brightness(1.2);
 }
 
 .stat-value {
     font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 10px;
+    color: var(--primary-light);
 }
 
 /* Documentation Section */
@@ -720,6 +728,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 3rem;
     margin-bottom: 20px;
     color: var(--primary-color);
+    filter: drop-shadow(0 4px 8px rgba(34, 197, 94, 0.3));
 }
 
 .contact-card h3 {
@@ -787,6 +796,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .hero-content {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+        padding: 0 15px;
+    }
+    
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
@@ -798,10 +834,21 @@ h1, h2, h3, h4, h5, h6 {
 
     .hero-cta {
         flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
     }
 
     .api-content {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .features-grid,
@@ -809,6 +856,135 @@ h1, h2, h3, h4, h5, h6 {
     .download-methods,
     .contact-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-section ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .footer-section ul li {
+        margin: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .feature-card,
+    .doc-card,
+    .contact-card,
+    .download-method {
+        padding: 30px 20px;
+    }
+    
+    .btn-large {
+        padding: 14px 28px;
+        font-size: 15px;
+    }
+    
+    .nav-wrapper {
+        padding: 10px 0;
+    }
+    
+    .logo-img {
+        height: 35px;
+    }
+    
+    .theme-toggle-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .hero {
+        padding-top: 70px;
+    }
+    
+    .features,
+    .api-section,
+    .docs-section,
+    .download-section,
+    .contact-section {
+        padding: 60px 0;
+    }
+    
+    .stats-section {
+        padding: 50px 0;
+    }
+    
+    .footer {
+        padding: 40px 0 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .btn-large {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+    
+    .feature-card,
+    .doc-card,
+    .contact-card,
+    .download-method {
+        padding: 25px 15px;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-value {
+        font-size: 2rem;
     }
 }
 

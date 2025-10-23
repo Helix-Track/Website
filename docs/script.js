@@ -358,7 +358,7 @@ if (themeToggle) {
 // CONSOLE MESSAGE
 // ============================================================================
 
-console.log('%c🚀 HelixTrack Core', 'font-size: 20px; font-weight: bold; color: #0066CC;');
+console.log('%c🚀 HelixTrack Core', 'font-size: 20px; font-weight: bold; color: #22C55E;');
 console.log('%cThe Open-Source JIRA Alternative for the Free World', 'font-size: 14px; color: #666;');
-console.log('%cGitHub: https://github.com/Helix-Track/Core', 'font-size: 12px; color: #00CC66;');
-console.log('%c297 API Actions | 100% JIRA Parity | 100% Free', 'font-size: 12px; color: #FF6600;');
+console.log('%cGitHub: https://github.com/Helix-Track/Core', 'font-size: 12px; color: #10B981;');
+console.log('%c372 API Actions | 100% JIRA + 102% Confluence Parity | 100% Free', 'font-size: 12px; color: #22C55E;');
