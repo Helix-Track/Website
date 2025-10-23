@@ -1,0 +1,31 @@
+services:
+  helixtrack-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: helixtrack-website
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    environment:
+      - NGINX_HOST=helixtrack.ru
+      - NGINX_PORT=80
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.helixtrack.rule=Host(`localhost`)"
+      - "traefik.http.services.helixtrack.loadbalancer.server.port=80"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - helixtrack-network
+
+networks:
+  helixtrack-network:
+    driver: bridge
+
+volumes:
+  helixtrack-logs:
